@@ -24,3 +24,14 @@ C:\Users\Mitch\Desktop\EventSolutionsCatalogueSystem\EventSolutionsCatalogueSyst
 C:\Users\Mitch\Desktop\EventSolutionsCatalogueSystem\EventSolutionsCatalogueSystem\obj\Debug\EventSolutionsCatalogueSystem.frmDataEntry.resources
 C:\Users\Mitch\Desktop\EventSolutionsCatalogueSystem\EventSolutionsCatalogueSystem\obj\Debug\EventSolutionsCatalogueSystem.frmAddUserBox.resources
 C:\Users\Mitch\Desktop\EventSolutionsCatalogueSystem\EventSolutionsCatalogueSystem\obj\Debug\EventSolutionsCatalogueSystem.frmEditUsers.resources
+C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Debug\EventSolutionsCatalogueSystem.exe
+C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Debug\EventSolutionsCatalogueSystem.xml
+C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Debug\EventSolutionsCatalogueSystem.pdb
+C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Debug\EventSolutionsCatalogueSystem.vbprojResolveAssemblyReference.cache
+C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Debug\EventSolutionsCatalogueSystem.frmAddUserBox.resources
+C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Debug\EventSolutionsCatalogueSystem.frmDataEntry.resources
+C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Debug\EventSolutionsCatalogueSystem.frmEditUsers.resources
+C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Debug\EventSolutionsCatalogueSystem.frmLogin.resources
+C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Debug\EventSolutionsCatalogueSystem.frmMainMenu.resources
+C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Debug\EventSolutionsCatalogueSystem.Resources.resources
+C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Debug\EventSolutionsCatalogueSystem.vbproj.GenerateResource.Cache

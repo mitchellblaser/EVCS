@@ -26,6 +26,27 @@ Public Class frmEditUsers
 
     End Function
 
+    Function Decrypt(ByVal value)
+
+        Dim encIterator As Integer = 7
+
+        Dim i As Integer = 0
+        Dim valueLength As Integer = 0
+        Dim decryptedOutput As String = ""
+
+        valueLength = Len(value)
+
+        While i < valueLength
+
+            decryptedOutput = decryptedOutput & Chr(Asc(value(i)) - 7)
+
+            i = i + 1
+        End While
+
+        Return decryptedOutput
+
+    End Function
+
     Private Sub btnAddUser_Click(sender As Object, e As EventArgs) Handles btnAddUser.Click
         frmAddUserBox.ShowDialog()
 
@@ -50,6 +71,26 @@ Public Class frmEditUsers
     End Sub
 
     Private Sub frmEditUsers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Check if user is admin
+
+        Dim eofcheck As String
+
+        If frmLogin.loggedInPrivilege <> "Administrator" Then
+            MsgBox("Contact an Administrator to add a user to the system.")
+            Me.Close()
+
+        Else
+            Using fileread As New StreamReader(frmLogin.userStorePath, True)
+                While True
+                    eofcheck = fileread.ReadLine()
+                    If eofcheck Is Nothing Then
+                        Exit While
+                    Else
+                        lstUsernames.Items.Add(Decrypt(eofcheck))
+                        lstPasswords.Items.Add(StrDup(Len(Decrypt(fileread.ReadLine())), "*"))
+                        lstPriveliges.Items.Add(Decrypt(fileread.ReadLine()))
+                    End If
+                End While
+            End Using
+        End If
     End Sub
 End Class

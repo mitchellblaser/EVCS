@@ -4,6 +4,10 @@ Imports System.Text
 Public Class frmLogin
     Public evRootPath As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\EventSolutions"
     Public userStorePath As String = evRootPath & "\userstore\userstore.txt"
+
+    Public loggedInUser As String
+    Public loggedInPrivilege As String
+
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         evLogin()
     End Sub
@@ -36,23 +40,47 @@ Public Class frmLogin
         Dim passwordLine As String
         Dim privilegeLine As String
 
-        Using fileRead As New StreamReader(userStorePath, True) 'Recursively loop until a username matches what's been entered
-            usernameLine = Decrypt(fileRead.ReadLine())
-            passwordLine = Decrypt(fileRead.ReadLine())
-            privilegeLine = Decrypt(fileRead.ReadLine())
+        Dim errorLevel As Integer = 0
+        Dim loginPass As Integer = 0
 
-            If usernameLine = txtUser.Text Then
-                If passwordLine = txtPass.Text Then
-                    frmMainMenu.Show()
-                    Me.Hide()
+        Using fileRead As New StreamReader(userStorePath, True) 'Recursively loop until a username matches what's been entered
+            While True
+                usernameLine = fileRead.ReadLine()
+
+                If usernameLine Is Nothing Then
+                    Exit While
                 Else
-                    MsgBox("Username and Password do not match.")
+                    usernameLine = Decrypt(usernameLine)
                 End If
-            Else
-                MsgBox("Username not recognized.")
-            End If
+
+                passwordLine = Decrypt(fileRead.ReadLine())
+                privilegeLine = Decrypt(fileRead.ReadLine())
+
+                If usernameLine = txtUser.Text Then
+                    errorLevel = 0
+                    If passwordLine = txtPass.Text Then
+                        loginPass = 1
+                        errorLevel = 0
+                        loggedInUser = txtUser.Text
+                        loggedInPrivilege = privilegeLine
+                        frmMainMenu.Show()
+                        Me.Hide()
+                    Else
+                        errorLevel = 2
+                    End If
+                Else
+                    errorLevel = 1
+                End If
+            End While
         End Using
 
+        If loginPass = 0 Then
+            If errorLevel = 1 Then
+                MsgBox("Username not Recognized.")
+            ElseIf errorLevel = 2 Then
+                MsgBox("Username and Password do not Match.")
+            End If
+        End If
     End Sub
 
     Private Sub btnQuit_Click(sender As Object, e As EventArgs) Handles btnQuit.Click

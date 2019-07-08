@@ -63,14 +63,14 @@ Partial Class frmAddUserBox
         Me.txtPassword.Location = New System.Drawing.Point(90, 36)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(188, 20)
-        Me.txtPassword.TabIndex = 4
+        Me.txtPassword.TabIndex = 5
         '
         'txtUsername
         '
         Me.txtUsername.Location = New System.Drawing.Point(90, 10)
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(188, 20)
-        Me.txtUsername.TabIndex = 5
+        Me.txtUsername.TabIndex = 4
         '
         'cmbAccessLevel
         '
