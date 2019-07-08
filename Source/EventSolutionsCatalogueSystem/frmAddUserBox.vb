@@ -34,36 +34,46 @@ Public Class frmAddUserBox
         Dim readPassword As String
         Dim readPrivelige As String
 
-        'Using fileread As New StreamReader(frmLogin.userStorePath, True)
-        '    While True
-        '        readUsername = fileread.ReadLine()
-        '        If readUsername Is Nothing Then
-        '            Exit While
-        '        Else
-        '            readUsername = Decrypt(readUsername)
-        '            readPassword = Decrypt(fileread.ReadLine())
-        '            readPrivelige = Decrypt(fileread.ReadLine())
+        Dim valid As Boolean
 
-        '            If readUsername <> targetUsername Then
-        '                writeList.Add(readUsername)
-        '                writeList.Add(readPassword)
-        '                writeList.Add(readPrivelige)
-        '            End If
+        valid = True
 
-        '        End If
-        '    End While
-        'End Using
+        Using fileread As New StreamReader(frmLogin.userStorePath, True)
+            While True
 
-        newUsername = txtUsername.Text
-        newPassword = txtPassword.Text
-        newLevel = cmbAccessLevel.Text
+                readUsername = fileread.ReadLine()
+                If readUsername Is Nothing Then
+                    Exit While
 
-        txtUsername.Text = ""
-        txtPassword.Text = ""
-        cmbAccessLevel.Text = ""
+                Else
 
-        frmAccepted = True
-        Me.Close()
+                    readUsername = Decrypt(readUsername)
+                    readPassword = Decrypt(fileread.ReadLine())
+                    readPrivelige = Decrypt(fileread.ReadLine())
+
+                    If txtUsername.Text = readUsername Then
+                        valid = False
+                    End If
+
+                End If
+
+            End While
+        End Using
+
+        If valid = False Then
+            MsgBox("This username already exists. Please choose a different one.")
+        Else
+            newUsername = txtUsername.Text
+            newPassword = txtPassword.Text
+            newLevel = cmbAccessLevel.Text
+
+            txtUsername.Text = ""
+            txtPassword.Text = ""
+            cmbAccessLevel.Text = ""
+
+            frmAccepted = True
+            Me.Close()
+        End If
     End Sub
 
     Private Sub frmAddUserBox_Load(sender As Object, e As EventArgs) Handles MyBase.Load

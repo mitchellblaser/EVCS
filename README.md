@@ -15,7 +15,7 @@
 #### <u>To Do:</u> *(Cleared as of 8/7/19)*
 
 - [x] Add Delete User functionality to *frmEditUsers.vb*
-- [ ] Add Check to ensure the same username doesn't get used twice to *frmEditUsers.vb*
+- [x] Add Check to ensure the same username doesn't get used twice to *frmEditUsers.vb*
 - [ ] Add synchronized scrolling functionality to *frmEditUsers.vb*
 - [x] Add synchronized selection functionality to *frmEditUsers.vb*
 - [ ] Create *frmDataView.vb*
@@ -45,3 +45,5 @@
 - [ ] Add 'Sort by Alphabetical (A-Z)' sorting algorithm
 - [ ] Add 'Sort by Alphabetical (Z-A)' sorting algorithm
 - [ ] Migrate sorting algorithms to *frmDataView.vb*'s List View
+- [ ] Clean up all the (very) messy code
+- [ ] Create installer with wizard to set up directory structures, user files, program files, etc.
