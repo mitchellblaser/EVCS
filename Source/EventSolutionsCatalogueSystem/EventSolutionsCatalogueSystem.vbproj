@@ -72,6 +72,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="crypto.vb" />
     <Compile Include="frmAddUserBox.Designer.vb">
       <DependentUpon>frmAddUserBox.vb</DependentUpon>
     </Compile>
