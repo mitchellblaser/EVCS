@@ -6,6 +6,8 @@ Public Class frmEditUsers
     Dim newPassword As String
     Dim newLevel As String
 
+    Dim deleteIndex As Integer
+
     Function Encrypt(ByVal value)
 
         Dim encIterator As Integer = 7
@@ -93,4 +95,40 @@ Public Class frmEditUsers
             End Using
         End If
     End Sub
+
+
+
+    Private Sub lstUsernames_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstUsernames.SelectedIndexChanged
+        deleteIndex = lstUsernames.SelectedIndex
+
+        lstPasswords.SelectedIndex = deleteIndex
+        lstPriveliges.SelectedIndex = deleteIndex
+
+    End Sub
+
+    Private Sub lstPasswords_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstPasswords.SelectedIndexChanged
+        deleteIndex = lstPasswords.SelectedIndex
+
+        lstUsernames.SelectedIndex = deleteIndex
+        lstPriveliges.SelectedIndex = deleteIndex
+
+    End Sub
+
+    Private Sub lstPriveliges_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstPriveliges.SelectedIndexChanged
+        deleteIndex = lstPriveliges.SelectedIndex
+
+        lstUsernames.SelectedIndex = deleteIndex
+        lstPasswords.SelectedIndex = deleteIndex
+
+    End Sub
+
+    Private Sub btnDeleteUser_Click(sender As Object, e As EventArgs) Handles btnDeleteUser.Click
+
+
+
+        Using fileread As New StreamReader(frmLogin.userStorePath, True)
+            ''read file
+        End Using
+    End Sub
+
 End Class
