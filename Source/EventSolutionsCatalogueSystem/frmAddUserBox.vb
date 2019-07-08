@@ -10,6 +10,10 @@
         newPassword = txtPassword.Text
         newLevel = cmbAccessLevel.Text
 
+        txtUsername.Text = ""
+        txtPassword.Text = ""
+        cmbAccessLevel.Text = ""
+
         frmAccepted = True
         Me.Close()
     End Sub

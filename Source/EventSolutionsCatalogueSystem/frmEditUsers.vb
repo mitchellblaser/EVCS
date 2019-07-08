@@ -73,30 +73,35 @@ Public Class frmEditUsers
     End Sub
 
     Private Sub frmEditUsers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        Dim eofcheck As String
-
         If frmLogin.loggedInPrivilege <> "Administrator" Then
             MsgBox("Contact an Administrator to add a user to the system.")
             Me.Close()
-
         Else
-            Using fileread As New StreamReader(frmLogin.userStorePath, True)
-                While True
-                    eofcheck = fileread.ReadLine()
-                    If eofcheck Is Nothing Then
-                        Exit While
-                    Else
-                        lstUsernames.Items.Add(Decrypt(eofcheck))
-                        lstPasswords.Items.Add(StrDup(Len(Decrypt(fileread.ReadLine())), "*"))
-                        lstPriveliges.Items.Add(Decrypt(fileread.ReadLine()))
-                    End If
-                End While
-            End Using
+            updateList()
         End If
     End Sub
 
+    Function updateList()
 
+        Dim eofcheck As String
+
+        lstUsernames.Items.Clear()
+        lstPasswords.Items.Clear()
+        lstPriveliges.Items.Clear()
+
+        Using fileread As New StreamReader(frmLogin.userStorePath, True)
+            While True
+                eofcheck = fileread.ReadLine()
+                If eofcheck Is Nothing Then
+                    Exit While
+                Else
+                    lstUsernames.Items.Add(Decrypt(eofcheck))
+                    lstPasswords.Items.Add(StrDup(Len(Decrypt(fileread.ReadLine())), "*"))
+                    lstPriveliges.Items.Add(Decrypt(fileread.ReadLine()))
+                End If
+            End While
+        End Using
+    End Function
 
     Private Sub lstUsernames_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstUsernames.SelectedIndexChanged
         deleteIndex = lstUsernames.SelectedIndex
@@ -123,12 +128,47 @@ Public Class frmEditUsers
     End Sub
 
     Private Sub btnDeleteUser_Click(sender As Object, e As EventArgs) Handles btnDeleteUser.Click
+        Dim targetUsername As String
 
+        Dim readUsername As String
+        Dim readPassword As String
+        Dim readPrivelige As String
 
+        Dim writeList As New List(Of String)
+
+        targetUsername = lstUsernames.Items(deleteIndex)
 
         Using fileread As New StreamReader(frmLogin.userStorePath, True)
-            ''read file
+
+            While True
+                readUsername = fileread.ReadLine()
+                If readUsername Is Nothing Then
+                    Exit While
+                Else
+                    readUsername = Decrypt(readUsername)
+                    readPassword = Decrypt(fileread.ReadLine())
+                    readPrivelige = Decrypt(fileread.ReadLine())
+
+                    If readUsername <> targetUsername Then
+                        writeList.Add(readUsername)
+                        writeList.Add(readPassword)
+                        writeList.Add(readPrivelige)
+                    End If
+
+                End If
+            End While
         End Using
+
+        My.Computer.FileSystem.DeleteFile(frmLogin.userStorePath)
+
+        Using filewrite As New StreamWriter(frmLogin.userStorePath, True)
+            For i As Integer = 0 To writeList.Count - 1
+                filewrite.WriteLine(Encrypt(writeList.Item(i)))
+            Next
+        End Using
+
+        updateList()
+
     End Sub
 
 End Class

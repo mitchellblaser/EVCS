@@ -14,7 +14,8 @@
 
 #### <u>To Do:</u> *(Cleared as of 8/7/19)*
 
-- [ ] Add Delete User functionality to *frmEditUsers.vb*
+- [x] Add Delete User functionality to *frmEditUsers.vb*
+- [ ] Add Check to ensure the same username doesn't get used twice to *frmEditUsers.vb*
 - [ ] Add synchronized scrolling functionality to *frmEditUsers.vb*
 - [x] Add synchronized selection functionality to *frmEditUsers.vb*
 - [ ] Create *frmDataView.vb*

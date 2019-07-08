@@ -12,3 +12,4 @@ C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Release\Eve
 C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Release\EventSolutionsCatalogueSystem.exe
 C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Release\EventSolutionsCatalogueSystem.xml
 C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Release\EventSolutionsCatalogueSystem.pdb
+C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Release\EventSolutionsCatalogueSystem.vbprojResolveAssemblyReference.cache
