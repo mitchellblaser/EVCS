@@ -9,15 +9,22 @@ Public Class frmEditUsers
     Dim deleteIndex As Integer
 
     Private Sub btnAddUser_Click(sender As Object, e As EventArgs) Handles btnAddUser.Click
+
+        Dim listWriter(3) As String
+        Dim newItem As ListViewItem
+
         frmAddUserBox.ShowDialog()
 
         newUsername = frmAddUserBox.newUsername
         newPassword = frmAddUserBox.newPassword
         newLevel = frmAddUserBox.newLevel
 
-        lstUsernames.Items.Add(newUsername)
-        lstPasswords.Items.Add(StrDup(Len(newPassword), "*"))
-        lstPriveliges.Items.Add(newLevel)
+        listWriter(0) = newUsername
+        listWriter(1) = StrDup(Len(newPassword), "*")
+        listWriter(2) = newLevel
+
+        newItem = New ListViewItem(listWriter)
+        lstUsers.Items.Add(newItem)
 
         Using filewrite As New StreamWriter(frmLogin.userStorePath, True)
             filewrite.WriteLine(Encrypt(newUsername))
@@ -36,6 +43,7 @@ Public Class frmEditUsers
             MsgBox("Contact an Administrator to add a user to the system.")
             Me.Close()
         Else
+            lstUsers.MultiSelect = False
             updateList()
         End If
     End Sub
@@ -43,10 +51,11 @@ Public Class frmEditUsers
     Function updateList()
 
         Dim eofcheck As String
+        Dim listWriter(3) As String
 
-        lstUsernames.Items.Clear()
-        lstPasswords.Items.Clear()
-        lstPriveliges.Items.Clear()
+        Dim newItem As ListViewItem
+
+        lstUsers.Items.Clear()
 
         Using fileread As New StreamReader(frmLogin.userStorePath, True)
             While True
@@ -54,37 +63,16 @@ Public Class frmEditUsers
                 If eofcheck Is Nothing Then
                     Exit While
                 Else
-                    lstUsernames.Items.Add(Decrypt(eofcheck))
-                    lstPasswords.Items.Add(StrDup(Len(Decrypt(fileread.ReadLine())), "*"))
-                    lstPriveliges.Items.Add(Decrypt(fileread.ReadLine()))
+                    listWriter(0) = Decrypt(eofcheck)
+                    listWriter(1) = StrDup(Len(Decrypt(fileread.ReadLine())), "*")
+                    listWriter(2) = Decrypt(fileread.ReadLine())
+
+                    newItem = New ListViewItem(listWriter)
+                    lstUsers.Items.Add(newItem)
                 End If
             End While
         End Using
     End Function
-
-    Private Sub lstUsernames_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstUsernames.SelectedIndexChanged
-        deleteIndex = lstUsernames.SelectedIndex
-
-        lstPasswords.SelectedIndex = deleteIndex
-        lstPriveliges.SelectedIndex = deleteIndex
-
-    End Sub
-
-    Private Sub lstPasswords_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstPasswords.SelectedIndexChanged
-        deleteIndex = lstPasswords.SelectedIndex
-
-        lstUsernames.SelectedIndex = deleteIndex
-        lstPriveliges.SelectedIndex = deleteIndex
-
-    End Sub
-
-    Private Sub lstPriveliges_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstPriveliges.SelectedIndexChanged
-        deleteIndex = lstPriveliges.SelectedIndex
-
-        lstUsernames.SelectedIndex = deleteIndex
-        lstPasswords.SelectedIndex = deleteIndex
-
-    End Sub
 
     Private Sub btnDeleteUser_Click(sender As Object, e As EventArgs) Handles btnDeleteUser.Click
         Dim targetUsername As String
@@ -95,7 +83,9 @@ Public Class frmEditUsers
 
         Dim writeList As New List(Of String)
 
-        targetUsername = lstUsernames.Items(deleteIndex)
+        MsgBox(lstUsers.Items(deleteIndex).Text)
+
+        targetUsername = lstUsers.Items(deleteIndex).Text
 
         Using fileread As New StreamReader(frmLogin.userStorePath, True)
 
@@ -130,4 +120,14 @@ Public Class frmEditUsers
 
     End Sub
 
+    Private Sub lstUsers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstUsers.SelectedIndexChanged
+        For Each itm As ListViewItem In lstUsers.SelectedItems
+            If itm.Selected Then
+                deleteIndex = itm.Index
+            End If
+        Next
+
+        MsgBox(deleteIndex)
+
+    End Sub
 End Class

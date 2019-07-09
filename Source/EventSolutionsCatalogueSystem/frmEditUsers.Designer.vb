@@ -22,9 +22,6 @@ Partial Class frmEditUsers
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.lstUsernames = New System.Windows.Forms.ListBox()
-        Me.lstPasswords = New System.Windows.Forms.ListBox()
-        Me.lstPriveliges = New System.Windows.Forms.ListBox()
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.lblUsername = New System.Windows.Forms.Label()
         Me.lblPassword = New System.Windows.Forms.Label()
@@ -32,32 +29,11 @@ Partial Class frmEditUsers
         Me.btnAddUser = New System.Windows.Forms.Button()
         Me.btnDeleteUser = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
-        Me.VScrollBar1 = New System.Windows.Forms.VScrollBar()
+        Me.lstUsers = New System.Windows.Forms.ListView()
+        Me.colUsername = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.colPassword = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.colPrivelige = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.SuspendLayout()
-        '
-        'lstUsernames
-        '
-        Me.lstUsernames.FormattingEnabled = True
-        Me.lstUsernames.Location = New System.Drawing.Point(16, 57)
-        Me.lstUsernames.Name = "lstUsernames"
-        Me.lstUsernames.Size = New System.Drawing.Size(174, 355)
-        Me.lstUsernames.TabIndex = 0
-        '
-        'lstPasswords
-        '
-        Me.lstPasswords.FormattingEnabled = True
-        Me.lstPasswords.Location = New System.Drawing.Point(196, 57)
-        Me.lstPasswords.Name = "lstPasswords"
-        Me.lstPasswords.Size = New System.Drawing.Size(174, 355)
-        Me.lstPasswords.TabIndex = 1
-        '
-        'lstPriveliges
-        '
-        Me.lstPriveliges.FormattingEnabled = True
-        Me.lstPriveliges.Location = New System.Drawing.Point(376, 57)
-        Me.lstPriveliges.Name = "lstPriveliges"
-        Me.lstPriveliges.Size = New System.Drawing.Size(174, 355)
-        Me.lstPriveliges.TabIndex = 2
         '
         'lblTitle
         '
@@ -123,19 +99,37 @@ Partial Class frmEditUsers
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
         '
-        'VScrollBar1
+        'lstUsers
         '
-        Me.VScrollBar1.Location = New System.Drawing.Point(553, 57)
-        Me.VScrollBar1.Name = "VScrollBar1"
-        Me.VScrollBar1.Size = New System.Drawing.Size(19, 355)
-        Me.VScrollBar1.TabIndex = 10
+        Me.lstUsers.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colUsername, Me.colPassword, Me.colPrivelige})
+        Me.lstUsers.Location = New System.Drawing.Point(16, 57)
+        Me.lstUsers.Name = "lstUsers"
+        Me.lstUsers.Size = New System.Drawing.Size(534, 355)
+        Me.lstUsers.TabIndex = 11
+        Me.lstUsers.UseCompatibleStateImageBehavior = False
+        Me.lstUsers.View = System.Windows.Forms.View.Details
+        '
+        'colUsername
+        '
+        Me.colUsername.Text = "Username"
+        Me.colUsername.Width = 178
+        '
+        'colPassword
+        '
+        Me.colPassword.Text = "Password"
+        Me.colPassword.Width = 178
+        '
+        'colPrivelige
+        '
+        Me.colPrivelige.Text = "Privelige"
+        Me.colPrivelige.Width = 174
         '
         'frmEditUsers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(700, 429)
-        Me.Controls.Add(Me.VScrollBar1)
+        Me.Controls.Add(Me.lstUsers)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnDeleteUser)
         Me.Controls.Add(Me.btnAddUser)
@@ -143,19 +137,12 @@ Partial Class frmEditUsers
         Me.Controls.Add(Me.lblPassword)
         Me.Controls.Add(Me.lblUsername)
         Me.Controls.Add(Me.lblTitle)
-        Me.Controls.Add(Me.lstPriveliges)
-        Me.Controls.Add(Me.lstPasswords)
-        Me.Controls.Add(Me.lstUsernames)
         Me.Name = "frmEditUsers"
         Me.Text = "Edit Users"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents lstUsernames As ListBox
-    Friend WithEvents lstPasswords As ListBox
-    Friend WithEvents lstPriveliges As ListBox
     Friend WithEvents lblTitle As Label
     Friend WithEvents lblUsername As Label
     Friend WithEvents lblPassword As Label
@@ -163,5 +150,8 @@ Partial Class frmEditUsers
     Friend WithEvents btnAddUser As Button
     Friend WithEvents btnDeleteUser As Button
     Friend WithEvents btnClose As Button
-    Friend WithEvents VScrollBar1 As VScrollBar
+    Friend WithEvents lstUsers As ListView
+    Friend WithEvents colUsername As ColumnHeader
+    Friend WithEvents colPassword As ColumnHeader
+    Friend WithEvents colPrivelige As ColumnHeader
 End Class

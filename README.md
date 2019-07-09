@@ -16,7 +16,7 @@
 
 - [x] Add Delete User functionality to *frmEditUsers.vb*
 - [x] Add Check to ensure the same username doesn't get used twice to *frmEditUsers.vb*
-- [ ] Add synchronized scrolling functionality to *frmEditUsers.vb*
+- [x] Add synchronized scrolling functionality to *frmEditUsers.vb*
 - [x] Add synchronized selection functionality to *frmEditUsers.vb*
 - [ ] Create *frmDataView.vb*
 - [ ] Create Calendar View panel in *frmDataView.vb*
