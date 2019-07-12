@@ -11,7 +11,16 @@ Public Class frmDataEntry
         Dim equipmentPrice As Integer
     End Structure
 
-    Dim equipmentRecords(equipmentSize()) As equipmentRecord 'Initialize an array of equipmentRecord(s) with the size dictated in the file 'settings/settings.evdf' (SEE 'settings/README.txt').
+    Structure clientRecord
+        Dim clientFirst As String
+        Dim clientLast As String
+        Dim clientPhone As String
+        Dim clientEmail As String
+        Dim clientAddress As String
+    End Structure
+
+    Dim equipmentRecords(equipmentStoreSize()) As equipmentRecord 'Initialize an array of equipmentRecord(s) with the size dictated in the file 'settings/settings.evdf' (SEE 'settings/README.txt').
+    Dim clientRecords(clientStoreSize()) As clientRecord 'Initialize an array of clientRecord(s) with the size dictated in the file 'settings/settings.evdf' (SEE 'settings/README.txt').
 
     Private Sub btnFile_Click(sender As Object, e As EventArgs) Handles btnFile.Click
         pnlFile.Visible = True
@@ -59,11 +68,11 @@ Public Class frmDataEntry
         ElseIf frmMainMenu.selectedTask = "AddHire" Then
             pnlHire.Visible = True
             'Read all files in equipment directory
-            Dim di As New DirectoryInfo(evRootPath & equipmentStoreLocation)
-            Dim fileArray As FileInfo() = di.GetFiles()
+            Dim Eqdi As New DirectoryInfo(evRootPath & equipmentStoreLocation)
+            Dim EqfileArray As FileInfo() = Eqdi.GetFiles()
             Dim i As Integer = 0 'Declare a counter to use in the loop below
             'Process them and load into a structure.
-            For Each file In fileArray
+            For Each file In EqfileArray
                 Using fileread As New StreamReader(evRootPath & equipmentStoreLocation & file.Name)
                     equipmentRecords(i).equipmentName = fileread.ReadLine()
                     equipmentRecords(i).equipmentManufacturer = fileread.ReadLine()
@@ -74,7 +83,21 @@ Public Class frmDataEntry
                 i = i + 1
             Next
             'Read all files in client directory
-
+            Dim Cldi As New DirectoryInfo(evRootPath & clientStoreLocation)
+            Dim ClfileArray As FileInfo() = Cldi.GetFiles()
+            i = 0
+            'Process them and load into a structure.
+            For Each file In ClfileArray
+                Using fileread As New StreamReader(evRootPath & clientStoreLocation & file.Name)
+                    clientRecords(i).clientFirst = fileread.ReadLine()
+                    clientRecords(i).clientLast = fileread.ReadLine()
+                    clientRecords(i).clientPhone = fileread.ReadLine()
+                    clientRecords(i).clientEmail = fileread.ReadLine()
+                    clientRecords(i).clientAddress = fileread.ReadLine()
+                End Using
+                cmbClient.Items.Add(clientRecords(i).clientFirst & " " & clientRecords(i).clientLast)
+                i = i + 1
+            Next
         End If
     End Sub
 

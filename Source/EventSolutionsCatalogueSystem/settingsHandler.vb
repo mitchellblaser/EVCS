@@ -5,7 +5,7 @@ Module settingsHandler
     Dim _clientSize As Integer
     Dim _hireSize As Integer
 
-    Function equipmentSize() As Integer
+    Function equipmentStoreSize() As Integer
         Using fileread As New StreamReader(evRootPath & settingsStoreLocation, True)
             _equipmentSize = fileread.ReadLine()
             _clientSize = fileread.ReadLine()
@@ -14,7 +14,7 @@ Module settingsHandler
         Return _equipmentSize
     End Function
 
-    Function clientSize() As Integer
+    Function clientStoreSize() As Integer
         Using fileread As New StreamReader(evRootPath & settingsStoreLocation, True)
             _equipmentSize = fileread.ReadLine()
             _clientSize = fileread.ReadLine()
@@ -23,7 +23,7 @@ Module settingsHandler
         Return _clientSize
     End Function
 
-    Function hireSize() As Integer
+    Function hireStoreSize() As Integer
         Using fileread As New StreamReader(evRootPath & settingsStoreLocation, True)
             _equipmentSize = fileread.ReadLine()
             _clientSize = fileread.ReadLine()
