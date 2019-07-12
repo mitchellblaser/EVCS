@@ -224,4 +224,17 @@ Public Class frmDataEntry
             MsgBox("Oops! An error has occured. Please exit and try again.")
         End If
     End Sub
+
+    Private Sub btnAddItem_Click(sender As Object, e As EventArgs) Handles btnAddItem.Click
+        If nudQuantity.Value <= equipmentRecords(cmbEquipment.SelectedIndex).equipmentQuantity Then
+            lstEquipment.Items.Add(equipmentRecords(cmbEquipment.SelectedIndex).equipmentName)
+            lstQuantity.Items.Add(nudQuantity.Value)
+            lstPrice.Items.Add(equipmentRecords(cmbEquipment.SelectedIndex).equipmentPrice * nudQuantity.Value)
+
+            'This code won't compile for a reason. I'm offline at the moment and I can't google something so I've left it like this to remind myself.
+            lblTotal.Text =
+        Else
+            MsgBox("You have exceded the amount of items you have in stock.")
+        End If
+    End Sub
 End Class

@@ -28,13 +28,6 @@ Partial Class frmDataView
         Me.lblMenu = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.pnlRibbon = New System.Windows.Forms.Panel()
-        Me.pnlView = New System.Windows.Forms.Panel()
-        Me.imgCalendarView = New System.Windows.Forms.PictureBox()
-        Me.imgListView = New System.Windows.Forms.PictureBox()
-        Me.pnlSearchSort = New System.Windows.Forms.Panel()
-        Me.imgAlphabeticalSort = New System.Windows.Forms.PictureBox()
-        Me.imgDateSort = New System.Windows.Forms.PictureBox()
-        Me.imgSearch = New System.Windows.Forms.PictureBox()
         Me.pnlFile = New System.Windows.Forms.Panel()
         Me.imgOpen = New System.Windows.Forms.PictureBox()
         Me.imgNew = New System.Windows.Forms.PictureBox()
@@ -42,10 +35,22 @@ Partial Class frmDataView
         Me.btnView = New System.Windows.Forms.Button()
         Me.btnSearchSort = New System.Windows.Forms.Button()
         Me.btnFile = New System.Windows.Forms.Button()
+        Me.pnlView = New System.Windows.Forms.Panel()
+        Me.imgCalendarView = New System.Windows.Forms.PictureBox()
+        Me.imgListView = New System.Windows.Forms.PictureBox()
+        Me.pnlSearchSort = New System.Windows.Forms.Panel()
+        Me.imgAlphabeticalSort = New System.Windows.Forms.PictureBox()
+        Me.imgDateSort = New System.Windows.Forms.PictureBox()
+        Me.imgSearch = New System.Windows.Forms.PictureBox()
+        Me.imgDelete = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         CType(Me.picClose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlRibbon.SuspendLayout()
+        Me.pnlFile.SuspendLayout()
+        CType(Me.imgOpen, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imgNew, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imgSave, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlView.SuspendLayout()
         CType(Me.imgCalendarView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgListView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -53,10 +58,7 @@ Partial Class frmDataView
         CType(Me.imgAlphabeticalSort, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgDateSort, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgSearch, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnlFile.SuspendLayout()
-        CType(Me.imgOpen, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.imgNew, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.imgSave, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imgDelete, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -111,16 +113,92 @@ Partial Class frmDataView
         'pnlRibbon
         '
         Me.pnlRibbon.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(118, Byte), Integer), CType(CType(210, Byte), Integer))
-        Me.pnlRibbon.Controls.Add(Me.pnlView)
-        Me.pnlRibbon.Controls.Add(Me.pnlSearchSort)
         Me.pnlRibbon.Controls.Add(Me.pnlFile)
         Me.pnlRibbon.Controls.Add(Me.btnView)
         Me.pnlRibbon.Controls.Add(Me.btnSearchSort)
         Me.pnlRibbon.Controls.Add(Me.btnFile)
+        Me.pnlRibbon.Controls.Add(Me.pnlView)
+        Me.pnlRibbon.Controls.Add(Me.pnlSearchSort)
         Me.pnlRibbon.Location = New System.Drawing.Point(0, 39)
         Me.pnlRibbon.Name = "pnlRibbon"
         Me.pnlRibbon.Size = New System.Drawing.Size(680, 84)
         Me.pnlRibbon.TabIndex = 5
+        '
+        'pnlFile
+        '
+        Me.pnlFile.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(232, Byte), Integer))
+        Me.pnlFile.Controls.Add(Me.imgDelete)
+        Me.pnlFile.Controls.Add(Me.imgOpen)
+        Me.pnlFile.Controls.Add(Me.imgNew)
+        Me.pnlFile.Controls.Add(Me.imgSave)
+        Me.pnlFile.Location = New System.Drawing.Point(0, 27)
+        Me.pnlFile.Name = "pnlFile"
+        Me.pnlFile.Size = New System.Drawing.Size(680, 58)
+        Me.pnlFile.TabIndex = 6
+        '
+        'imgOpen
+        '
+        Me.imgOpen.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.open
+        Me.imgOpen.Location = New System.Drawing.Point(117, 3)
+        Me.imgOpen.Name = "imgOpen"
+        Me.imgOpen.Size = New System.Drawing.Size(50, 50)
+        Me.imgOpen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.imgOpen.TabIndex = 2
+        Me.imgOpen.TabStop = False
+        '
+        'imgNew
+        '
+        Me.imgNew.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources._new
+        Me.imgNew.Location = New System.Drawing.Point(61, 3)
+        Me.imgNew.Name = "imgNew"
+        Me.imgNew.Size = New System.Drawing.Size(50, 50)
+        Me.imgNew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.imgNew.TabIndex = 1
+        Me.imgNew.TabStop = False
+        '
+        'imgSave
+        '
+        Me.imgSave.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.save
+        Me.imgSave.Location = New System.Drawing.Point(5, 3)
+        Me.imgSave.Name = "imgSave"
+        Me.imgSave.Size = New System.Drawing.Size(50, 50)
+        Me.imgSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.imgSave.TabIndex = 0
+        Me.imgSave.TabStop = False
+        '
+        'btnView
+        '
+        Me.btnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnView.Font = New System.Drawing.Font("Gill Sans MT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnView.Location = New System.Drawing.Point(154, 0)
+        Me.btnView.Name = "btnView"
+        Me.btnView.Size = New System.Drawing.Size(78, 27)
+        Me.btnView.TabIndex = 4
+        Me.btnView.Text = "View"
+        Me.btnView.UseVisualStyleBackColor = True
+        '
+        'btnSearchSort
+        '
+        Me.btnSearchSort.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchSort.Font = New System.Drawing.Font("Gill Sans MT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearchSort.Location = New System.Drawing.Point(77, 0)
+        Me.btnSearchSort.Name = "btnSearchSort"
+        Me.btnSearchSort.Size = New System.Drawing.Size(78, 27)
+        Me.btnSearchSort.TabIndex = 1
+        Me.btnSearchSort.Text = "Search/Sort"
+        Me.btnSearchSort.UseVisualStyleBackColor = True
+        '
+        'btnFile
+        '
+        Me.btnFile.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(232, Byte), Integer))
+        Me.btnFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnFile.Font = New System.Drawing.Font("Gill Sans MT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnFile.Location = New System.Drawing.Point(0, 0)
+        Me.btnFile.Name = "btnFile"
+        Me.btnFile.Size = New System.Drawing.Size(78, 27)
+        Me.btnFile.TabIndex = 0
+        Me.btnFile.Text = "File"
+        Me.btnFile.UseVisualStyleBackColor = False
         '
         'pnlView
         '
@@ -195,80 +273,15 @@ Partial Class frmDataView
         Me.imgSearch.TabIndex = 0
         Me.imgSearch.TabStop = False
         '
-        'pnlFile
+        'imgDelete
         '
-        Me.pnlFile.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(232, Byte), Integer))
-        Me.pnlFile.Controls.Add(Me.imgOpen)
-        Me.pnlFile.Controls.Add(Me.imgNew)
-        Me.pnlFile.Controls.Add(Me.imgSave)
-        Me.pnlFile.Location = New System.Drawing.Point(0, 27)
-        Me.pnlFile.Name = "pnlFile"
-        Me.pnlFile.Size = New System.Drawing.Size(680, 58)
-        Me.pnlFile.TabIndex = 6
-        '
-        'imgOpen
-        '
-        Me.imgOpen.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.open
-        Me.imgOpen.Location = New System.Drawing.Point(117, 3)
-        Me.imgOpen.Name = "imgOpen"
-        Me.imgOpen.Size = New System.Drawing.Size(50, 50)
-        Me.imgOpen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.imgOpen.TabIndex = 2
-        Me.imgOpen.TabStop = False
-        '
-        'imgNew
-        '
-        Me.imgNew.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources._new
-        Me.imgNew.Location = New System.Drawing.Point(61, 3)
-        Me.imgNew.Name = "imgNew"
-        Me.imgNew.Size = New System.Drawing.Size(50, 50)
-        Me.imgNew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.imgNew.TabIndex = 1
-        Me.imgNew.TabStop = False
-        '
-        'imgSave
-        '
-        Me.imgSave.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.save
-        Me.imgSave.Location = New System.Drawing.Point(5, 3)
-        Me.imgSave.Name = "imgSave"
-        Me.imgSave.Size = New System.Drawing.Size(50, 50)
-        Me.imgSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.imgSave.TabIndex = 0
-        Me.imgSave.TabStop = False
-        '
-        'btnView
-        '
-        Me.btnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnView.Font = New System.Drawing.Font("Gill Sans MT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnView.Location = New System.Drawing.Point(154, 0)
-        Me.btnView.Name = "btnView"
-        Me.btnView.Size = New System.Drawing.Size(78, 27)
-        Me.btnView.TabIndex = 4
-        Me.btnView.Text = "View"
-        Me.btnView.UseVisualStyleBackColor = True
-        '
-        'btnSearchSort
-        '
-        Me.btnSearchSort.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSearchSort.Font = New System.Drawing.Font("Gill Sans MT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearchSort.Location = New System.Drawing.Point(77, 0)
-        Me.btnSearchSort.Name = "btnSearchSort"
-        Me.btnSearchSort.Size = New System.Drawing.Size(78, 27)
-        Me.btnSearchSort.TabIndex = 1
-        Me.btnSearchSort.Text = "Search/Sort"
-        Me.btnSearchSort.UseVisualStyleBackColor = True
-        '
-        'btnFile
-        '
-        Me.btnFile.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(232, Byte), Integer))
-        Me.btnFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnFile.Font = New System.Drawing.Font("Gill Sans MT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnFile.Location = New System.Drawing.Point(0, 0)
-        Me.btnFile.Name = "btnFile"
-        Me.btnFile.Size = New System.Drawing.Size(78, 27)
-        Me.btnFile.TabIndex = 0
-        Me.btnFile.Text = "File"
-        Me.btnFile.UseVisualStyleBackColor = False
+        Me.imgDelete.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.trash
+        Me.imgDelete.Location = New System.Drawing.Point(174, 3)
+        Me.imgDelete.Name = "imgDelete"
+        Me.imgDelete.Size = New System.Drawing.Size(50, 50)
+        Me.imgDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.imgDelete.TabIndex = 6
+        Me.imgDelete.TabStop = False
         '
         'frmDataView
         '
@@ -287,6 +300,10 @@ Partial Class frmDataView
         CType(Me.picClose, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlRibbon.ResumeLayout(False)
+        Me.pnlFile.ResumeLayout(False)
+        CType(Me.imgOpen, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imgNew, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imgSave, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlView.ResumeLayout(False)
         CType(Me.imgCalendarView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgListView, System.ComponentModel.ISupportInitialize).EndInit()
@@ -294,10 +311,7 @@ Partial Class frmDataView
         CType(Me.imgAlphabeticalSort, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgDateSort, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgSearch, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pnlFile.ResumeLayout(False)
-        CType(Me.imgOpen, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.imgNew, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.imgSave, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imgDelete, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -322,4 +336,5 @@ Partial Class frmDataView
     Friend WithEvents btnView As Button
     Friend WithEvents btnSearchSort As Button
     Friend WithEvents btnFile As Button
+    Friend WithEvents imgDelete As PictureBox
 End Class

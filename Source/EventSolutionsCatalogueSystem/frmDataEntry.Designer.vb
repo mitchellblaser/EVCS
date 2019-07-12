@@ -489,9 +489,9 @@ Partial Class frmDataEntry
         Me.lblPriceList.ForeColor = System.Drawing.Color.White
         Me.lblPriceList.Location = New System.Drawing.Point(496, 44)
         Me.lblPriceList.Name = "lblPriceList"
-        Me.lblPriceList.Size = New System.Drawing.Size(65, 16)
+        Me.lblPriceList.Size = New System.Drawing.Size(77, 16)
         Me.lblPriceList.TabIndex = 11
-        Me.lblPriceList.Text = "Price (Total)"
+        Me.lblPriceList.Text = "Price (Per Day)"
         '
         'lblEquipmentList
         '
@@ -740,11 +740,11 @@ Partial Class frmDataEntry
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(679, 499)
-        Me.Controls.Add(Me.pnlClient)
         Me.Controls.Add(Me.pnlRibbon)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.pnlHire)
         Me.Controls.Add(Me.pnlEquipment)
+        Me.Controls.Add(Me.pnlClient)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmDataEntry"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
