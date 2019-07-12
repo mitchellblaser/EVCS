@@ -74,6 +74,8 @@ Partial Class frmAddUserBox
         '
         'cmbAccessLevel
         '
+        Me.cmbAccessLevel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.cmbAccessLevel.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cmbAccessLevel.FormattingEnabled = True
         Me.cmbAccessLevel.Items.AddRange(New Object() {"Standard", "Administrator"})
         Me.cmbAccessLevel.Location = New System.Drawing.Point(90, 62)

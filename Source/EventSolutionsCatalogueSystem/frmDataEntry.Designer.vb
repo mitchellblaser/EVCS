@@ -271,7 +271,7 @@ Partial Class frmDataEntry
         Me.txtNameLast.Location = New System.Drawing.Point(207, 28)
         Me.txtNameLast.Name = "txtNameLast"
         Me.txtNameLast.Size = New System.Drawing.Size(180, 20)
-        Me.txtNameLast.TabIndex = 5
+        Me.txtNameLast.TabIndex = 3
         '
         'lblNameLast
         '
@@ -290,7 +290,7 @@ Partial Class frmDataEntry
         Me.txtPhone.Location = New System.Drawing.Point(14, 73)
         Me.txtPhone.Name = "txtPhone"
         Me.txtPhone.Size = New System.Drawing.Size(180, 20)
-        Me.txtPhone.TabIndex = 3
+        Me.txtPhone.TabIndex = 5
         '
         'lblPhone
         '
@@ -740,11 +740,11 @@ Partial Class frmDataEntry
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(679, 499)
-        Me.Controls.Add(Me.pnlHire)
-        Me.Controls.Add(Me.pnlEquipment)
         Me.Controls.Add(Me.pnlClient)
         Me.Controls.Add(Me.pnlRibbon)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.pnlHire)
+        Me.Controls.Add(Me.pnlEquipment)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmDataEntry"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

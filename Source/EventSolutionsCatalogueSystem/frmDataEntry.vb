@@ -70,15 +70,12 @@ Public Class frmDataEntry
                     equipmentRecords(i).equipmentQuantity = fileread.ReadLine()
                     equipmentRecords(i).equipmentPrice = fileread.ReadLine()
                 End Using
-
                 cmbEquipment.Items.Add(equipmentRecords(i).equipmentName)
-
                 i = i + 1
-
             Next
+            'Read all files in client directory
 
         End If
-
     End Sub
 
     Private Sub picClose_Click(sender As Object, e As EventArgs) Handles picClose.Click
@@ -102,6 +99,22 @@ Public Class frmDataEntry
                 filewrite.WriteLine(numPricePerDay.Value)
             End Using
             MsgBox("Successfully saved.")
+        ElseIf frmMainMenu.selectedTask = "AddClient" Then
+            openDataPath = evRootPath & clientStoreLocation & txtFirstName.Text & txtNameLast.Text & "_" & txtEmail.Text & ".evdf"
+
+            Try
+                My.Computer.FileSystem.DeleteFile(openDataPath)
+            Catch ex As Exception
+            End Try
+
+            Using filewrite As New StreamWriter(openDataPath, True)
+                filewrite.WriteLine(txtFirstName.Text)
+                filewrite.WriteLine(txtNameLast.Text)
+                filewrite.WriteLine(txtPhone.Text)
+                filewrite.WriteLine(txtEmail.Text)
+                filewrite.WriteLine(txtAddress.Text)
+            End Using
+            MsgBox("Successfully saved.")
         End If
     End Sub
 
@@ -112,6 +125,13 @@ Public Class frmDataEntry
             txtManufacturer.Text = ""
             numQuantity.Value = 0
             numPricePerDay.Value = 0
+        ElseIf frmMainMenu.selectedTask = "AddClient" Then
+            txtFirstName.Focus()
+            txtFirstName.Text = ""
+            txtNameLast.Text = ""
+            txtPhone.Text = ""
+            txtEmail.Text = ""
+            txtAddress.Text = ""
         End If
     End Sub
 
@@ -134,6 +154,19 @@ Public Class frmDataEntry
         ElseIf frmMainMenu.selectedTask = "AddClient" Then
             dlgOpenRecord.InitialDirectory = evRootPath & clientStoreLocation
             dlgOpenRecord.ShowDialog()
+            openDataPath = dlgOpenRecord.FileName
+
+            Using readfile As New StreamReader(openDataPath)
+                txtName.Focus() 'Reset the user's view back to the first box for easy data entry
+
+                txtFirstName.Text = readfile.ReadLine()
+                txtNameLast.Text = readfile.ReadLine()
+                txtPhone.Text = readfile.ReadLine()
+                txtEmail.Text = readfile.ReadLine()
+                txtAddress.Text = readfile.ReadLine()
+
+            End Using
+
         ElseIf frmMainMenu.selectedTask = "AddHire" Then
             dlgOpenRecord.InitialDirectory = evRootPath & hireStoreLocation
             dlgOpenRecord.ShowDialog()
@@ -153,7 +186,15 @@ Public Class frmDataEntry
             numQuantity.Value = 0
             numPricePerDay.Value = 0
         ElseIf frmMainMenu.selectedTask = "AddClient" Then
-            '
+            My.Computer.FileSystem.DeleteFile(openDataPath)
+            MsgBox("Successfully deleted.")
+
+            txtFirstName.Focus()
+            txtFirstName.Text = ""
+            txtNameLast.Text = ""
+            txtPhone.Text = ""
+            txtEmail.Text = ""
+            txtAddress.Text = ""
         ElseIf frmMainMenu.selectedTask = "AddHire" Then
             '
         Else
