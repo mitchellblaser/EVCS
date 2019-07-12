@@ -3,24 +3,25 @@
     Private Sub btnAddClient_Click(sender As Object, e As EventArgs) Handles btnAddClient.Click
         selectedTask = "AddClient"
         frmDataEntry.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub btnAddEquipment_Click(sender As Object, e As EventArgs) Handles btnAddEquipment.Click
         selectedTask = "AddEquipment"
         frmDataEntry.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub btnAddHire_Click(sender As Object, e As EventArgs) Handles btnAddHire.Click
         selectedTask = "AddHire"
         frmDataEntry.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub btnViewData_Click(sender As Object, e As EventArgs) Handles btnViewData.Click
         selectedTask = "ViewData"
-        Me.Close()
+        frmDataView.Show()
+        Me.Hide()
     End Sub
 
     Private Sub picClose_Click(sender As Object, e As EventArgs) Handles picClose.Click

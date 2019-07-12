@@ -35,3 +35,4 @@ C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Debug\Event
 C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Debug\EventSolutionsCatalogueSystem.frmMainMenu.resources
 C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Debug\EventSolutionsCatalogueSystem.Resources.resources
 C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Debug\EventSolutionsCatalogueSystem.vbproj.GenerateResource.Cache
+C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Debug\EventSolutionsCatalogueSystem.frmDataView.resources

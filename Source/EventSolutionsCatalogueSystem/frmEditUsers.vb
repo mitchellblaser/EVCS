@@ -83,8 +83,6 @@ Public Class frmEditUsers
 
         Dim writeList As New List(Of String)
 
-        MsgBox(lstUsers.Items(deleteIndex).Text)
-
         targetUsername = lstUsers.Items(deleteIndex).Text
 
         Using fileread As New StreamReader(frmLogin.userStorePath, True)
@@ -126,8 +124,6 @@ Public Class frmEditUsers
                 deleteIndex = itm.Index
             End If
         Next
-
-        MsgBox(deleteIndex)
 
     End Sub
 End Class

@@ -2,7 +2,7 @@
 
 #### A (*less*) simple inventory system written in *VB.NET :(*
 
-(shut up, it works, okay?)
+"it kind of works"
 
 > **<u>Installation</u>**
 >
@@ -47,3 +47,4 @@
 - [ ] Migrate sorting algorithms to *frmDataView.vb*'s List View
 - [ ] Clean up all the (very) messy code
 - [ ] Create installer with wizard to set up directory structures, user files, program files, etc.
+- [ ] Add "Management" form (Admin only) which will allow for exporting data files with information to email.
