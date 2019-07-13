@@ -15,6 +15,7 @@
 #### <u>To Do:</u> *(Cleared as of 14/7/19)*
 
 - [ ] Create *frmDataView.vb*
+- [ ] Bold dates with events in on Calendar view of *frmDataView.vb*
 - [ ] Create Calendar View panel in *frmDataView.vb*
 - [ ] Create List View panel in *frmDataView.vb*
 - [ ] Add labels under icons in ribbon to increase readability.

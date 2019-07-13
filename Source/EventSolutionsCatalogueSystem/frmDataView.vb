@@ -37,5 +37,7 @@
         frmMainMenu.Show()
     End Sub
 
+    Private Sub calDatePicker_DateChanged(sender As Object, e As DateRangeEventArgs) Handles calDatePicker.DateChanged
 
+    End Sub
 End Class

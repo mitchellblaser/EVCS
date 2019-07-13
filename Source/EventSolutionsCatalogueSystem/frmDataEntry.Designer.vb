@@ -23,25 +23,14 @@ Partial Class frmDataEntry
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.picClose = New System.Windows.Forms.PictureBox()
-        Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.lblMenu = New System.Windows.Forms.Label()
         Me.pnlRibbon = New System.Windows.Forms.Panel()
         Me.btnView = New System.Windows.Forms.Button()
         Me.btnSearchSort = New System.Windows.Forms.Button()
         Me.btnFile = New System.Windows.Forms.Button()
         Me.pnlFile = New System.Windows.Forms.Panel()
-        Me.imgDelete = New System.Windows.Forms.PictureBox()
-        Me.imgOpen = New System.Windows.Forms.PictureBox()
-        Me.imgNew = New System.Windows.Forms.PictureBox()
-        Me.imgSave = New System.Windows.Forms.PictureBox()
         Me.pnlView = New System.Windows.Forms.Panel()
-        Me.imgCalendarView = New System.Windows.Forms.PictureBox()
-        Me.imgListView = New System.Windows.Forms.PictureBox()
         Me.pnlSearchSort = New System.Windows.Forms.Panel()
-        Me.imgAlphabeticalSort = New System.Windows.Forms.PictureBox()
-        Me.imgDateSort = New System.Windows.Forms.PictureBox()
-        Me.imgSearch = New System.Windows.Forms.PictureBox()
         Me.pnlClient = New System.Windows.Forms.Panel()
         Me.txtAddress = New System.Windows.Forms.TextBox()
         Me.lblAddress = New System.Windows.Forms.Label()
@@ -82,28 +71,39 @@ Partial Class frmDataEntry
         Me.lblClient = New System.Windows.Forms.Label()
         Me.lblRecord = New System.Windows.Forms.Label()
         Me.dlgOpenRecord = New System.Windows.Forms.OpenFileDialog()
+        Me.imgAlphabeticalSort = New System.Windows.Forms.PictureBox()
+        Me.imgDateSort = New System.Windows.Forms.PictureBox()
+        Me.imgSearch = New System.Windows.Forms.PictureBox()
+        Me.imgDelete = New System.Windows.Forms.PictureBox()
+        Me.imgOpen = New System.Windows.Forms.PictureBox()
+        Me.imgNew = New System.Windows.Forms.PictureBox()
+        Me.imgSave = New System.Windows.Forms.PictureBox()
+        Me.imgCalendarView = New System.Windows.Forms.PictureBox()
+        Me.imgListView = New System.Windows.Forms.PictureBox()
+        Me.picClose = New System.Windows.Forms.PictureBox()
+        Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
-        CType(Me.picClose, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlRibbon.SuspendLayout()
         Me.pnlFile.SuspendLayout()
-        CType(Me.imgDelete, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.imgOpen, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.imgNew, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.imgSave, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlView.SuspendLayout()
-        CType(Me.imgCalendarView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.imgListView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlSearchSort.SuspendLayout()
-        CType(Me.imgAlphabeticalSort, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.imgDateSort, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.imgSearch, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlClient.SuspendLayout()
         Me.pnlEquipment.SuspendLayout()
         CType(Me.numPricePerDay, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.numQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlHire.SuspendLayout()
         CType(Me.nudQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imgAlphabeticalSort, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imgDateSort, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imgSearch, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imgDelete, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imgOpen, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imgNew, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imgSave, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imgCalendarView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imgListView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picClose, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -116,26 +116,6 @@ Partial Class frmDataEntry
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(680, 40)
         Me.Panel1.TabIndex = 2
-        '
-        'picClose
-        '
-        Me.picClose.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.CloseButton
-        Me.picClose.Location = New System.Drawing.Point(630, -2)
-        Me.picClose.Name = "picClose"
-        Me.picClose.Size = New System.Drawing.Size(55, 44)
-        Me.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.picClose.TabIndex = 2
-        Me.picClose.TabStop = False
-        '
-        'picLogo
-        '
-        Me.picLogo.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.EventSolutionsLogo_Cropped
-        Me.picLogo.Location = New System.Drawing.Point(9, 6)
-        Me.picLogo.Name = "picLogo"
-        Me.picLogo.Size = New System.Drawing.Size(140, 29)
-        Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.picLogo.TabIndex = 1
-        Me.picLogo.TabStop = False
         '
         'lblMenu
         '
@@ -207,46 +187,6 @@ Partial Class frmDataEntry
         Me.pnlFile.Size = New System.Drawing.Size(680, 58)
         Me.pnlFile.TabIndex = 6
         '
-        'imgDelete
-        '
-        Me.imgDelete.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.trash
-        Me.imgDelete.Location = New System.Drawing.Point(173, 3)
-        Me.imgDelete.Name = "imgDelete"
-        Me.imgDelete.Size = New System.Drawing.Size(50, 50)
-        Me.imgDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.imgDelete.TabIndex = 3
-        Me.imgDelete.TabStop = False
-        '
-        'imgOpen
-        '
-        Me.imgOpen.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.open
-        Me.imgOpen.Location = New System.Drawing.Point(117, 3)
-        Me.imgOpen.Name = "imgOpen"
-        Me.imgOpen.Size = New System.Drawing.Size(50, 50)
-        Me.imgOpen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.imgOpen.TabIndex = 2
-        Me.imgOpen.TabStop = False
-        '
-        'imgNew
-        '
-        Me.imgNew.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources._new
-        Me.imgNew.Location = New System.Drawing.Point(61, 3)
-        Me.imgNew.Name = "imgNew"
-        Me.imgNew.Size = New System.Drawing.Size(50, 50)
-        Me.imgNew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.imgNew.TabIndex = 1
-        Me.imgNew.TabStop = False
-        '
-        'imgSave
-        '
-        Me.imgSave.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.save
-        Me.imgSave.Location = New System.Drawing.Point(5, 3)
-        Me.imgSave.Name = "imgSave"
-        Me.imgSave.Size = New System.Drawing.Size(50, 50)
-        Me.imgSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.imgSave.TabIndex = 0
-        Me.imgSave.TabStop = False
-        '
         'pnlView
         '
         Me.pnlView.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(232, Byte), Integer))
@@ -257,26 +197,6 @@ Partial Class frmDataEntry
         Me.pnlView.Size = New System.Drawing.Size(680, 58)
         Me.pnlView.TabIndex = 8
         Me.pnlView.Visible = False
-        '
-        'imgCalendarView
-        '
-        Me.imgCalendarView.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.calendar_disabled
-        Me.imgCalendarView.Location = New System.Drawing.Point(62, 3)
-        Me.imgCalendarView.Name = "imgCalendarView"
-        Me.imgCalendarView.Size = New System.Drawing.Size(50, 50)
-        Me.imgCalendarView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.imgCalendarView.TabIndex = 1
-        Me.imgCalendarView.TabStop = False
-        '
-        'imgListView
-        '
-        Me.imgListView.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.list_disabled
-        Me.imgListView.Location = New System.Drawing.Point(5, 3)
-        Me.imgListView.Name = "imgListView"
-        Me.imgListView.Size = New System.Drawing.Size(50, 50)
-        Me.imgListView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.imgListView.TabIndex = 0
-        Me.imgListView.TabStop = False
         '
         'pnlSearchSort
         '
@@ -289,36 +209,6 @@ Partial Class frmDataEntry
         Me.pnlSearchSort.Size = New System.Drawing.Size(679, 58)
         Me.pnlSearchSort.TabIndex = 7
         Me.pnlSearchSort.Visible = False
-        '
-        'imgAlphabeticalSort
-        '
-        Me.imgAlphabeticalSort.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.alphabetical_disabled
-        Me.imgAlphabeticalSort.Location = New System.Drawing.Point(117, 3)
-        Me.imgAlphabeticalSort.Name = "imgAlphabeticalSort"
-        Me.imgAlphabeticalSort.Size = New System.Drawing.Size(50, 50)
-        Me.imgAlphabeticalSort.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.imgAlphabeticalSort.TabIndex = 2
-        Me.imgAlphabeticalSort.TabStop = False
-        '
-        'imgDateSort
-        '
-        Me.imgDateSort.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.datetime_disabled
-        Me.imgDateSort.Location = New System.Drawing.Point(61, 3)
-        Me.imgDateSort.Name = "imgDateSort"
-        Me.imgDateSort.Size = New System.Drawing.Size(50, 50)
-        Me.imgDateSort.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.imgDateSort.TabIndex = 1
-        Me.imgDateSort.TabStop = False
-        '
-        'imgSearch
-        '
-        Me.imgSearch.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.search
-        Me.imgSearch.Location = New System.Drawing.Point(5, 3)
-        Me.imgSearch.Name = "imgSearch"
-        Me.imgSearch.Size = New System.Drawing.Size(50, 50)
-        Me.imgSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.imgSearch.TabIndex = 0
-        Me.imgSearch.TabStop = False
         '
         'pnlClient
         '
@@ -734,6 +624,116 @@ Partial Class frmDataEntry
         Me.lblRecord.TabIndex = 0
         Me.lblRecord.Text = "New Hire"
         '
+        'imgAlphabeticalSort
+        '
+        Me.imgAlphabeticalSort.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.alphabetical_disabled
+        Me.imgAlphabeticalSort.Location = New System.Drawing.Point(117, 3)
+        Me.imgAlphabeticalSort.Name = "imgAlphabeticalSort"
+        Me.imgAlphabeticalSort.Size = New System.Drawing.Size(50, 50)
+        Me.imgAlphabeticalSort.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.imgAlphabeticalSort.TabIndex = 2
+        Me.imgAlphabeticalSort.TabStop = False
+        '
+        'imgDateSort
+        '
+        Me.imgDateSort.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.datetime_disabled
+        Me.imgDateSort.Location = New System.Drawing.Point(61, 3)
+        Me.imgDateSort.Name = "imgDateSort"
+        Me.imgDateSort.Size = New System.Drawing.Size(50, 50)
+        Me.imgDateSort.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.imgDateSort.TabIndex = 1
+        Me.imgDateSort.TabStop = False
+        '
+        'imgSearch
+        '
+        Me.imgSearch.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.search_disabled
+        Me.imgSearch.Location = New System.Drawing.Point(5, 3)
+        Me.imgSearch.Name = "imgSearch"
+        Me.imgSearch.Size = New System.Drawing.Size(50, 50)
+        Me.imgSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.imgSearch.TabIndex = 0
+        Me.imgSearch.TabStop = False
+        '
+        'imgDelete
+        '
+        Me.imgDelete.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.trash
+        Me.imgDelete.Location = New System.Drawing.Point(173, 3)
+        Me.imgDelete.Name = "imgDelete"
+        Me.imgDelete.Size = New System.Drawing.Size(50, 50)
+        Me.imgDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.imgDelete.TabIndex = 3
+        Me.imgDelete.TabStop = False
+        '
+        'imgOpen
+        '
+        Me.imgOpen.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.open
+        Me.imgOpen.Location = New System.Drawing.Point(117, 3)
+        Me.imgOpen.Name = "imgOpen"
+        Me.imgOpen.Size = New System.Drawing.Size(50, 50)
+        Me.imgOpen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.imgOpen.TabIndex = 2
+        Me.imgOpen.TabStop = False
+        '
+        'imgNew
+        '
+        Me.imgNew.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources._new
+        Me.imgNew.Location = New System.Drawing.Point(61, 3)
+        Me.imgNew.Name = "imgNew"
+        Me.imgNew.Size = New System.Drawing.Size(50, 50)
+        Me.imgNew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.imgNew.TabIndex = 1
+        Me.imgNew.TabStop = False
+        '
+        'imgSave
+        '
+        Me.imgSave.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.save
+        Me.imgSave.Location = New System.Drawing.Point(5, 3)
+        Me.imgSave.Name = "imgSave"
+        Me.imgSave.Size = New System.Drawing.Size(50, 50)
+        Me.imgSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.imgSave.TabIndex = 0
+        Me.imgSave.TabStop = False
+        '
+        'imgCalendarView
+        '
+        Me.imgCalendarView.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.calendar_disabled
+        Me.imgCalendarView.Location = New System.Drawing.Point(62, 3)
+        Me.imgCalendarView.Name = "imgCalendarView"
+        Me.imgCalendarView.Size = New System.Drawing.Size(50, 50)
+        Me.imgCalendarView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.imgCalendarView.TabIndex = 1
+        Me.imgCalendarView.TabStop = False
+        '
+        'imgListView
+        '
+        Me.imgListView.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.list_disabled
+        Me.imgListView.Location = New System.Drawing.Point(5, 3)
+        Me.imgListView.Name = "imgListView"
+        Me.imgListView.Size = New System.Drawing.Size(50, 50)
+        Me.imgListView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.imgListView.TabIndex = 0
+        Me.imgListView.TabStop = False
+        '
+        'picClose
+        '
+        Me.picClose.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.CloseButton
+        Me.picClose.Location = New System.Drawing.Point(630, -2)
+        Me.picClose.Name = "picClose"
+        Me.picClose.Size = New System.Drawing.Size(55, 44)
+        Me.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picClose.TabIndex = 2
+        Me.picClose.TabStop = False
+        '
+        'picLogo
+        '
+        Me.picLogo.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.EventSolutionsLogo_Cropped
+        Me.picLogo.Location = New System.Drawing.Point(9, 6)
+        Me.picLogo.Name = "picLogo"
+        Me.picLogo.Size = New System.Drawing.Size(140, 29)
+        Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picLogo.TabIndex = 1
+        Me.picLogo.TabStop = False
+        '
         'frmDataEntry
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -751,21 +751,10 @@ Partial Class frmDataEntry
         Me.Text = "frmDataEntry"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.picClose, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlRibbon.ResumeLayout(False)
         Me.pnlFile.ResumeLayout(False)
-        CType(Me.imgDelete, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.imgOpen, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.imgNew, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.imgSave, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlView.ResumeLayout(False)
-        CType(Me.imgCalendarView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.imgListView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlSearchSort.ResumeLayout(False)
-        CType(Me.imgAlphabeticalSort, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.imgDateSort, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.imgSearch, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlClient.ResumeLayout(False)
         Me.pnlClient.PerformLayout()
         Me.pnlEquipment.ResumeLayout(False)
@@ -775,6 +764,17 @@ Partial Class frmDataEntry
         Me.pnlHire.ResumeLayout(False)
         Me.pnlHire.PerformLayout()
         CType(Me.nudQuantity, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imgAlphabeticalSort, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imgDateSort, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imgSearch, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imgDelete, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imgOpen, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imgNew, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imgSave, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imgCalendarView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imgListView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picClose, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
