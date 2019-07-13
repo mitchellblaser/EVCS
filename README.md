@@ -28,7 +28,7 @@
 - [ ] Upload Design Guidelines to GitHub Repository as a backup.
 - [x] Add 'New Client' functionality to *frmDataEntry.vb*
 - [x] Add 'New Equipment' functionality to *frmDataEntry.vb*
-- [ ] Add 'New Hire' functionality to *frmDataEntry.vb*
+- [x] Add 'New Hire' functionality to *frmDataEntry.vb*
 - [x] Add File In/Out functionality to write out new data and read in existing data records to *frmDataEntry.vb*
 - [ ] Add 'View Calendar' functionality to *frmDataView.vb*
 - [ ] Add 'View List' functionality to *frmDataView.vb*

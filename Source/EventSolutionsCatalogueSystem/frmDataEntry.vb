@@ -189,6 +189,10 @@ Public Class frmDataEntry
     End Sub
 
     Private Sub imgOpen_Click(sender As Object, e As EventArgs) Handles imgOpen.Click
+        Dim equipmentLine As String
+        Dim quantityLine As Integer
+        Dim priceLine As Integer
+
         If frmMainMenu.selectedTask = "AddEquipment" Then
             dlgOpenRecord.InitialDirectory = evRootPath & equipmentStoreLocation
             dlgOpenRecord.ShowDialog()
@@ -223,6 +227,34 @@ Public Class frmDataEntry
         ElseIf frmMainMenu.selectedTask = "AddHire" Then
             dlgOpenRecord.InitialDirectory = evRootPath & hireStoreLocation
             dlgOpenRecord.ShowDialog()
+
+            openDataPath = dlgOpenRecord.FileName
+
+            Using readfile As New StreamReader(openDataPath)
+                cmbClient.Focus()
+                cmbClient.Text = readfile.ReadLine()
+                dtpDateOut.Value = readfile.ReadLine()
+                dtpDateIn.Value = readfile.ReadLine()
+
+                lstEquipment.Items.Clear()
+                lstPrice.Items.Clear()
+                lstQuantity.Items.Clear()
+
+                While True
+                    equipmentLine = readfile.ReadLine()
+                    If equipmentLine Is Nothing Then
+                        Exit While
+                    Else
+                        lstEquipment.Items.Add(equipmentLine)
+                        quantityLine = readfile.ReadLine()
+                        lstQuantity.Items.Add(quantityLine)
+                        priceLine = readfile.ReadLine()
+                        lstPrice.Items.Add(priceLine)
+                        totalPrice = totalPrice + priceLine * quantityLine
+                    End If
+                End While
+            End Using
+            calculateHireCost()
         Else
             MsgBox("Oops! An error has occured. Please exit and try again.")
         End If
