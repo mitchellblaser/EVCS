@@ -26,9 +26,10 @@ Partial Class frmDataView
         Me.picClose = New System.Windows.Forms.PictureBox()
         Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.lblMenu = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.pnlViewCal = New System.Windows.Forms.Panel()
         Me.pnlRibbon = New System.Windows.Forms.Panel()
         Me.pnlFile = New System.Windows.Forms.Panel()
+        Me.imgDelete = New System.Windows.Forms.PictureBox()
         Me.imgOpen = New System.Windows.Forms.PictureBox()
         Me.imgNew = New System.Windows.Forms.PictureBox()
         Me.imgSave = New System.Windows.Forms.PictureBox()
@@ -42,12 +43,18 @@ Partial Class frmDataView
         Me.imgAlphabeticalSort = New System.Windows.Forms.PictureBox()
         Me.imgDateSort = New System.Windows.Forms.PictureBox()
         Me.imgSearch = New System.Windows.Forms.PictureBox()
-        Me.imgDelete = New System.Windows.Forms.PictureBox()
+        Me.pnlViewList = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.MonthCalendar1 = New System.Windows.Forms.MonthCalendar()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.Panel1.SuspendLayout()
         CType(Me.picClose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlViewCal.SuspendLayout()
         Me.pnlRibbon.SuspendLayout()
         Me.pnlFile.SuspendLayout()
+        CType(Me.imgDelete, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgOpen, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgNew, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgSave, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,7 +65,7 @@ Partial Class frmDataView
         CType(Me.imgAlphabeticalSort, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgDateSort, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgSearch, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.imgDelete, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlViewList.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -102,13 +109,16 @@ Partial Class frmDataView
         Me.lblMenu.TabIndex = 0
         Me.lblMenu.Text = "Data Viewer"
         '
-        'Panel2
+        'pnlViewCal
         '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer))
-        Me.Panel2.Location = New System.Drawing.Point(0, 123)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(680, 316)
-        Me.Panel2.TabIndex = 4
+        Me.pnlViewCal.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer))
+        Me.pnlViewCal.Controls.Add(Me.ListBox1)
+        Me.pnlViewCal.Controls.Add(Me.Label2)
+        Me.pnlViewCal.Controls.Add(Me.MonthCalendar1)
+        Me.pnlViewCal.Location = New System.Drawing.Point(0, 123)
+        Me.pnlViewCal.Name = "pnlViewCal"
+        Me.pnlViewCal.Size = New System.Drawing.Size(680, 316)
+        Me.pnlViewCal.TabIndex = 4
         '
         'pnlRibbon
         '
@@ -135,6 +145,16 @@ Partial Class frmDataView
         Me.pnlFile.Name = "pnlFile"
         Me.pnlFile.Size = New System.Drawing.Size(680, 58)
         Me.pnlFile.TabIndex = 6
+        '
+        'imgDelete
+        '
+        Me.imgDelete.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.trash
+        Me.imgDelete.Location = New System.Drawing.Point(174, 3)
+        Me.imgDelete.Name = "imgDelete"
+        Me.imgDelete.Size = New System.Drawing.Size(50, 50)
+        Me.imgDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.imgDelete.TabIndex = 6
+        Me.imgDelete.TabStop = False
         '
         'imgOpen
         '
@@ -273,15 +293,48 @@ Partial Class frmDataView
         Me.imgSearch.TabIndex = 0
         Me.imgSearch.TabStop = False
         '
-        'imgDelete
+        'pnlViewList
         '
-        Me.imgDelete.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.trash
-        Me.imgDelete.Location = New System.Drawing.Point(174, 3)
-        Me.imgDelete.Name = "imgDelete"
-        Me.imgDelete.Size = New System.Drawing.Size(50, 50)
-        Me.imgDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.imgDelete.TabIndex = 6
-        Me.imgDelete.TabStop = False
+        Me.pnlViewList.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer))
+        Me.pnlViewList.Controls.Add(Me.Label1)
+        Me.pnlViewList.Location = New System.Drawing.Point(0, 123)
+        Me.pnlViewList.Name = "pnlViewList"
+        Me.pnlViewList.Size = New System.Drawing.Size(680, 316)
+        Me.pnlViewList.TabIndex = 5
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(225, 110)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(19, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "list"
+        '
+        'MonthCalendar1
+        '
+        Me.MonthCalendar1.Location = New System.Drawing.Point(15, 30)
+        Me.MonthCalendar1.Name = "MonthCalendar1"
+        Me.MonthCalendar1.TabIndex = 0
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Gill Sans MT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(12, 13)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(59, 16)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Select Date"
+        '
+        'ListBox1
+        '
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.Location = New System.Drawing.Point(254, 30)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(400, 264)
+        Me.ListBox1.TabIndex = 2
         '
         'frmDataView
         '
@@ -289,8 +342,9 @@ Partial Class frmDataView
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(680, 438)
         Me.Controls.Add(Me.pnlRibbon)
-        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.pnlViewCal)
+        Me.Controls.Add(Me.pnlViewList)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmDataView"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -299,8 +353,11 @@ Partial Class frmDataView
         Me.Panel1.PerformLayout()
         CType(Me.picClose, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlViewCal.ResumeLayout(False)
+        Me.pnlViewCal.PerformLayout()
         Me.pnlRibbon.ResumeLayout(False)
         Me.pnlFile.ResumeLayout(False)
+        CType(Me.imgDelete, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgOpen, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgNew, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgSave, System.ComponentModel.ISupportInitialize).EndInit()
@@ -311,7 +368,8 @@ Partial Class frmDataView
         CType(Me.imgAlphabeticalSort, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgDateSort, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgSearch, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.imgDelete, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlViewList.ResumeLayout(False)
+        Me.pnlViewList.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -320,7 +378,7 @@ Partial Class frmDataView
     Friend WithEvents picClose As PictureBox
     Friend WithEvents picLogo As PictureBox
     Friend WithEvents lblMenu As Label
-    Friend WithEvents Panel2 As Panel
+    Friend WithEvents pnlViewCal As Panel
     Friend WithEvents pnlRibbon As Panel
     Friend WithEvents pnlView As Panel
     Friend WithEvents imgCalendarView As PictureBox
@@ -337,4 +395,9 @@ Partial Class frmDataView
     Friend WithEvents btnSearchSort As Button
     Friend WithEvents btnFile As Button
     Friend WithEvents imgDelete As PictureBox
+    Friend WithEvents pnlViewList As Panel
+    Friend WithEvents MonthCalendar1 As MonthCalendar
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents ListBox1 As ListBox
 End Class
