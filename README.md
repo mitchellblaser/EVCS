@@ -21,7 +21,7 @@
 - [ ] Create *frmDataView.vb*
 - [ ] Create Calendar View panel in *frmDataView.vb*
 - [ ] Create List View panel in *frmDataView.vb*
-- [ ] Migrate Ribbon from *frmDataEntry.vb* to *frmDataView.vb* (create two copies)
+- [x] Migrate Ribbon from *frmDataEntry.vb* to *frmDataView.vb* (create two copies)
 - [ ] Add labels under icons in ribbon to increase readability.
 - [ ] Style *frmEditUsers.vb* to meet Design Guidelines in EVCS Design Folio.
 - [ ] Style *frmAddUserBox.vb* to meet Design Guidelines in EVCS Design Folio.
@@ -32,9 +32,9 @@
 - [x] Add File In/Out functionality to write out new data and read in existing data records to *frmDataEntry.vb*
 - [ ] Add 'View Calendar' functionality to *frmDataView.vb*
 - [ ] Add 'View List' functionality to *frmDataView.vb*
-- [ ] Add File In functionality to read in data records created in *frmDataEntry.vb*
-- [ ] Migrate Encryption/Decryption method to *frmDataEntry.vb*
-- [ ] Migrate Encryption/Decryption method to *frmDataView.vb*
+- [x] Add File In functionality to read in data records created in *frmDataEntry.vb*
+- [x] Migrate Encryption/Decryption method to *frmDataEntry.vb*
+- [x] Migrate Encryption/Decryption method to *frmDataView.vb*
 - [ ] Create more secure method of encryption than a +7 cypher.
 - [ ] Add the ability to click+drag on the window panels and move them around (this is a problem with the way the windows are designed and not VB or Windows.) This will need to be done for every form.
 - [ ] Create search function which returns a list of indexes which correlate to search results in the input list.
@@ -48,3 +48,4 @@
 - [ ] Clean up all the (very) messy code
 - [ ] Create installer with wizard to set up directory structures, user files, program files, etc.
 - [ ] Add "Management" form (Admin only) which will allow for exporting data files with information to email.
+- [ ] Send Invoice from hire form once complete? Very, Very long term stretchy goal

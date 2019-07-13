@@ -156,6 +156,7 @@ Public Class frmDataEntry
                     filewrite.WriteLine(lstPrice.Items(i))
                 Next
             End Using
+            MsgBox("Successfully saved.")
         End If
     End Sub
 
@@ -281,7 +282,19 @@ Public Class frmDataEntry
             txtEmail.Text = ""
             txtAddress.Text = ""
         ElseIf frmMainMenu.selectedTask = "AddHire" Then
-            '
+            cmbClient.Focus()
+            cmbClient.Text = ""
+            cmbEquipment.Text = ""
+            nudQuantity.Value = 0
+            dtpDateIn.Value = Date.Now
+            dtpDateOut.Value = Date.Now
+            lstEquipment.Items.Clear()
+            lstPrice.Items.Clear()
+            lstQuantity.Items.Clear()
+            totalPrice = 0
+            calculateHireCost()
+            My.Computer.FileSystem.DeleteFile(openDataPath)
+            MsgBox("Successfully deleted.")
         Else
             MsgBox("Oops! An error has occured. Please exit and try again.")
         End If
