@@ -1,7 +1,7 @@
 ﻿Imports System.IO
 
 Public Class frmDataEntry
-
+    Dim totalPrice As Integer
     Dim openDataPath As String = ""
 
     Structure equipmentRecord
@@ -56,6 +56,7 @@ Public Class frmDataEntry
     End Sub
 
     Private Sub frmDataEntry_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         pnlClient.Visible = False
         pnlEquipment.Visible = False
         pnlHire.Visible = False
@@ -138,6 +139,23 @@ Public Class frmDataEntry
                 filewrite.WriteLine(txtAddress.Text)
             End Using
             MsgBox("Successfully saved.")
+        ElseIf frmMainMenu.selectedTask = "AddHire" Then
+            openDataPath = evRootPath & hireStoreLocation & Replace(dtpDateOut.Value.ToShortDateString, "/", "_") & "__" & Replace(cmbClient.SelectedItem, " ", "") & ".evdf"
+
+            Try
+                My.Computer.FileSystem.DeleteFile(openDataPath)
+            Catch ex As Exception
+            End Try
+            Using filewrite As New StreamWriter(openDataPath, True)
+                filewrite.WriteLine(cmbClient.SelectedItem)
+                filewrite.WriteLine(dtpDateOut.Value)
+                filewrite.WriteLine(dtpDateIn.Value)
+                For i As Integer = 0 To lstEquipment.Items.Count - 1
+                    filewrite.WriteLine(lstEquipment.Items(i))
+                    filewrite.WriteLine(lstQuantity.Items(i))
+                    filewrite.WriteLine(lstPrice.Items(i))
+                Next
+            End Using
         End If
     End Sub
 
@@ -155,6 +173,18 @@ Public Class frmDataEntry
             txtPhone.Text = ""
             txtEmail.Text = ""
             txtAddress.Text = ""
+        ElseIf frmMainMenu.selectedTask = "AddHire" Then
+            cmbClient.Focus()
+            cmbClient.Text = ""
+            cmbEquipment.Text = ""
+            nudQuantity.Value = 0
+            dtpDateIn.Value = Date.Now
+            dtpDateOut.Value = Date.Now
+            lstEquipment.Items.Clear()
+            lstPrice.Items.Clear()
+            lstQuantity.Items.Clear()
+            totalPrice = 0
+            calculateHireCost()
         End If
     End Sub
 
@@ -226,15 +256,31 @@ Public Class frmDataEntry
     End Sub
 
     Private Sub btnAddItem_Click(sender As Object, e As EventArgs) Handles btnAddItem.Click
+
         If nudQuantity.Value <= equipmentRecords(cmbEquipment.SelectedIndex).equipmentQuantity Then
             lstEquipment.Items.Add(equipmentRecords(cmbEquipment.SelectedIndex).equipmentName)
             lstQuantity.Items.Add(nudQuantity.Value)
             lstPrice.Items.Add(equipmentRecords(cmbEquipment.SelectedIndex).equipmentPrice * nudQuantity.Value)
+            totalPrice = totalPrice + equipmentRecords(cmbEquipment.SelectedIndex).equipmentPrice * nudQuantity.Value
 
-            'This code won't compile for a reason. I'm offline at the moment and I can't google something so I've left it like this to remind myself.
-            lblTotal.Text =
+            calculateHireCost()
         Else
             MsgBox("You have exceded the amount of items you have in stock.")
         End If
     End Sub
+
+    Private Sub dtpDateOut_ValueChanged(sender As Object, e As EventArgs) Handles dtpDateOut.ValueChanged
+        calculateHireCost()
+    End Sub
+
+    Private Sub dtpDateIn_ValueChanged(sender As Object, e As EventArgs) Handles dtpDateIn.ValueChanged
+        calculateHireCost()
+    End Sub
+
+    Function calculateHireCost()
+        Dim totalDates = dtpDateIn.Value - dtpDateOut.Value
+        Dim totalDays As Integer = totalDates.TotalHours
+        totalDays = (totalDays / 24) + 1
+        lblTotal.Text = "Total: $" & totalDays * totalPrice
+    End Function
 End Class
