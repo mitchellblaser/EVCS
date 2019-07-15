@@ -1,4 +1,4 @@
-# EventSolutions Catalogue System
+EventSolutions Catalogue System
 
 #### A (*less*) simple inventory system written in *VB.NET :(*
 
@@ -12,20 +12,10 @@
 >
 > Once you have the setup completed, you should be able to run the solution and log in with the default credentials, `user` and `password`.
 
-#### <u>To Do:</u> *(Cleared as of 14/7/19)*
+#### <u>To Do:</u> *(Cleared as of 16/7/19)*
 
-- [x] Create *frmDataView.vb*
-- [x] Make select universal in *frmDataEntry.vb*
 - [ ] Also, fix the quantity
-- [x] Bold dates with events in on Calendar view of *frmDataView.vb*
-- [x] Create Calendar View panel in *frmDataView.vb*
-- [x] Create List View panel in *frmDataView.vb*
 - [ ] Add labels under icons in ribbon to increase readability.
-- [ ] Style *frmEditUsers.vb* to meet Design Guidelines in EVCS Design Folio.
-- [ ] Style *frmAddUserBox.vb* to meet Design Guidelines in EVCS Design Folio.
-- [x] Upload Design Guidelines to GitHub Repository as a backup.
-- [x] Add 'View Calendar' functionality to *frmDataView.vb*
-- [x] Add 'View List' functionality to *frmDataView.vb*
 - [ ] Create more secure method of encryption than a +7 cypher.
 - [ ] Add the ability to click+drag on the window panels and move them around (this is a problem with the way the windows are designed and not VB or Windows.) This will need to be done for every form.
 - [ ] Create search function which returns a list of indexes which correlate to search results in the input list.
