@@ -15,19 +15,18 @@ EventSolutions Catalogue System
 #### <u>To Do:</u> *(Cleared as of 16/7/19)*
 
 - [ ] Also, fix the quantity
-- [ ] Add labels under icons in ribbon to increase readability.
-- [ ] Create more secure method of encryption than a +7 cypher.
-- [ ] Add the ability to click+drag on the window panels and move them around (this is a problem with the way the windows are designed and not VB or Windows.) This will need to be done for every form.
-- [ ] Create search function which returns a list of indexes which correlate to search results in the input list.
-- [ ] Add search functionality to *frmDataView.vb* to allow for quicker location of records in both the list and calendar view modes.
 - [ ] Add 'Sort by Date (newest)' sorting algorithm
 - [ ] Add 'Sort by Date (oldest)' sorting algorithm
 - [ ] Add 'Sort by Alphabetical (A-Z)' sorting algorithm
 - [ ] Add 'Sort by Alphabetical (Z-A)' sorting algorithm
 - [ ] Migrate sorting algorithms to *frmDataView.vb*'s List View
 - [ ] Clean up all the (very) messy code
-- [ ] Create installer with wizard to set up directory structures, user files, program files, etc.
-- [ ] Add "Management" form (Admin only) which will allow for exporting data files with information to email.
-- [ ] Send Invoice from hire form once complete? Very, Very long term stretchy goal
 - [ ] Fix the ding
 - [ ] Fix password error message issue
+- [ ] Create installer with wizard to set up directory structures, user files, program files, etc.
+- [ ] Create more secure method of encryption than a +7 cypher.
+- [ ] Add the ability to click+drag on the window panels and move them around (this is a problem with the way the windows are designed and not VB or Windows.) This will need to be done for every form.
+- [ ] Create search function which returns a list of indexes which correlate to search results in the input list.
+- [ ] Add search functionality to *frmDataView.vb* to allow for quicker location of records in both the list and calendar view modes.
+- [ ] Add "Management" form (Admin only) which will allow for exporting data files with information to email.
+- [ ] Send Invoice from hire form once complete? Very, Very long term stretchy goal

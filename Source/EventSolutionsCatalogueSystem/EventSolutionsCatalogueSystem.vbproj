@@ -214,6 +214,18 @@
   <ItemGroup>
     <None Include="Resources\search-disabled.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save-disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new-disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open-disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash-disabled.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

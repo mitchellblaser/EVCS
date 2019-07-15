@@ -82,6 +82,15 @@ Partial Class frmDataEntry
         Me.lblClient = New System.Windows.Forms.Label()
         Me.lblRecord = New System.Windows.Forms.Label()
         Me.dlgOpenRecord = New System.Windows.Forms.OpenFileDialog()
+        Me.lblSearch = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.picClose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -198,6 +207,10 @@ Partial Class frmDataEntry
         'pnlFile
         '
         Me.pnlFile.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(232, Byte), Integer))
+        Me.pnlFile.Controls.Add(Me.Label6)
+        Me.pnlFile.Controls.Add(Me.Label5)
+        Me.pnlFile.Controls.Add(Me.Label4)
+        Me.pnlFile.Controls.Add(Me.Label3)
         Me.pnlFile.Controls.Add(Me.imgDelete)
         Me.pnlFile.Controls.Add(Me.imgOpen)
         Me.pnlFile.Controls.Add(Me.imgNew)
@@ -212,7 +225,7 @@ Partial Class frmDataEntry
         Me.imgDelete.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.trash
         Me.imgDelete.Location = New System.Drawing.Point(173, 3)
         Me.imgDelete.Name = "imgDelete"
-        Me.imgDelete.Size = New System.Drawing.Size(50, 50)
+        Me.imgDelete.Size = New System.Drawing.Size(40, 40)
         Me.imgDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.imgDelete.TabIndex = 3
         Me.imgDelete.TabStop = False
@@ -222,7 +235,7 @@ Partial Class frmDataEntry
         Me.imgOpen.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.open
         Me.imgOpen.Location = New System.Drawing.Point(117, 3)
         Me.imgOpen.Name = "imgOpen"
-        Me.imgOpen.Size = New System.Drawing.Size(50, 50)
+        Me.imgOpen.Size = New System.Drawing.Size(40, 40)
         Me.imgOpen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.imgOpen.TabIndex = 2
         Me.imgOpen.TabStop = False
@@ -232,7 +245,7 @@ Partial Class frmDataEntry
         Me.imgNew.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources._new
         Me.imgNew.Location = New System.Drawing.Point(61, 3)
         Me.imgNew.Name = "imgNew"
-        Me.imgNew.Size = New System.Drawing.Size(50, 50)
+        Me.imgNew.Size = New System.Drawing.Size(40, 40)
         Me.imgNew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.imgNew.TabIndex = 1
         Me.imgNew.TabStop = False
@@ -242,7 +255,7 @@ Partial Class frmDataEntry
         Me.imgSave.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.save
         Me.imgSave.Location = New System.Drawing.Point(5, 3)
         Me.imgSave.Name = "imgSave"
-        Me.imgSave.Size = New System.Drawing.Size(50, 50)
+        Me.imgSave.Size = New System.Drawing.Size(40, 40)
         Me.imgSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.imgSave.TabIndex = 0
         Me.imgSave.TabStop = False
@@ -250,6 +263,8 @@ Partial Class frmDataEntry
         'pnlView
         '
         Me.pnlView.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(232, Byte), Integer))
+        Me.pnlView.Controls.Add(Me.Label8)
+        Me.pnlView.Controls.Add(Me.Label7)
         Me.pnlView.Controls.Add(Me.imgCalendarView)
         Me.pnlView.Controls.Add(Me.imgListView)
         Me.pnlView.Location = New System.Drawing.Point(0, 26)
@@ -263,7 +278,7 @@ Partial Class frmDataEntry
         Me.imgCalendarView.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.calendar_disabled
         Me.imgCalendarView.Location = New System.Drawing.Point(62, 3)
         Me.imgCalendarView.Name = "imgCalendarView"
-        Me.imgCalendarView.Size = New System.Drawing.Size(50, 50)
+        Me.imgCalendarView.Size = New System.Drawing.Size(40, 40)
         Me.imgCalendarView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.imgCalendarView.TabIndex = 1
         Me.imgCalendarView.TabStop = False
@@ -273,7 +288,7 @@ Partial Class frmDataEntry
         Me.imgListView.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.list_disabled
         Me.imgListView.Location = New System.Drawing.Point(5, 3)
         Me.imgListView.Name = "imgListView"
-        Me.imgListView.Size = New System.Drawing.Size(50, 50)
+        Me.imgListView.Size = New System.Drawing.Size(40, 40)
         Me.imgListView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.imgListView.TabIndex = 0
         Me.imgListView.TabStop = False
@@ -281,6 +296,9 @@ Partial Class frmDataEntry
         'pnlSearchSort
         '
         Me.pnlSearchSort.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(232, Byte), Integer))
+        Me.pnlSearchSort.Controls.Add(Me.Label2)
+        Me.pnlSearchSort.Controls.Add(Me.Label1)
+        Me.pnlSearchSort.Controls.Add(Me.lblSearch)
         Me.pnlSearchSort.Controls.Add(Me.imgAlphabeticalSort)
         Me.pnlSearchSort.Controls.Add(Me.imgDateSort)
         Me.pnlSearchSort.Controls.Add(Me.imgSearch)
@@ -295,7 +313,7 @@ Partial Class frmDataEntry
         Me.imgAlphabeticalSort.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.alphabetical_disabled
         Me.imgAlphabeticalSort.Location = New System.Drawing.Point(117, 3)
         Me.imgAlphabeticalSort.Name = "imgAlphabeticalSort"
-        Me.imgAlphabeticalSort.Size = New System.Drawing.Size(50, 50)
+        Me.imgAlphabeticalSort.Size = New System.Drawing.Size(40, 40)
         Me.imgAlphabeticalSort.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.imgAlphabeticalSort.TabIndex = 2
         Me.imgAlphabeticalSort.TabStop = False
@@ -305,7 +323,7 @@ Partial Class frmDataEntry
         Me.imgDateSort.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.datetime_disabled
         Me.imgDateSort.Location = New System.Drawing.Point(61, 3)
         Me.imgDateSort.Name = "imgDateSort"
-        Me.imgDateSort.Size = New System.Drawing.Size(50, 50)
+        Me.imgDateSort.Size = New System.Drawing.Size(40, 40)
         Me.imgDateSort.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.imgDateSort.TabIndex = 1
         Me.imgDateSort.TabStop = False
@@ -315,7 +333,7 @@ Partial Class frmDataEntry
         Me.imgSearch.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.search_disabled
         Me.imgSearch.Location = New System.Drawing.Point(5, 3)
         Me.imgSearch.Name = "imgSearch"
-        Me.imgSearch.Size = New System.Drawing.Size(50, 50)
+        Me.imgSearch.Size = New System.Drawing.Size(40, 40)
         Me.imgSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.imgSearch.TabIndex = 0
         Me.imgSearch.TabStop = False
@@ -734,6 +752,105 @@ Partial Class frmDataEntry
         Me.lblRecord.TabIndex = 0
         Me.lblRecord.Text = "New Hire"
         '
+        'lblSearch
+        '
+        Me.lblSearch.AutoSize = True
+        Me.lblSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.5!)
+        Me.lblSearch.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.lblSearch.Location = New System.Drawing.Point(10, 42)
+        Me.lblSearch.Name = "lblSearch"
+        Me.lblSearch.Size = New System.Drawing.Size(34, 12)
+        Me.lblSearch.TabIndex = 3
+        Me.lblSearch.Text = "Search"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.5!)
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label1.Location = New System.Drawing.Point(51, 42)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(59, 12)
+        Me.Label1.TabIndex = 4
+        Me.Label1.Text = "Most Recent"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.5!)
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label2.Location = New System.Drawing.Point(111, 42)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(56, 12)
+        Me.Label2.TabIndex = 5
+        Me.Label2.Text = "Alphabetical"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.5!)
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(11, 42)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(27, 12)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "Save"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.5!)
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(69, 42)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(25, 12)
+        Me.Label4.TabIndex = 7
+        Me.Label4.Text = "New"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.5!)
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(124, 42)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(27, 12)
+        Me.Label5.TabIndex = 8
+        Me.Label5.Text = "Open"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.5!)
+        Me.Label6.ForeColor = System.Drawing.Color.Black
+        Me.Label6.Location = New System.Drawing.Point(178, 42)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(32, 12)
+        Me.Label6.TabIndex = 9
+        Me.Label6.Text = "Delete"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.5!)
+        Me.Label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label7.Location = New System.Drawing.Point(15, 42)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(20, 12)
+        Me.Label7.TabIndex = 6
+        Me.Label7.Text = "List"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.5!)
+        Me.Label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label8.Location = New System.Drawing.Point(61, 42)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(42, 12)
+        Me.Label8.TabIndex = 7
+        Me.Label8.Text = "Calendar"
+        '
         'frmDataEntry
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -748,21 +865,24 @@ Partial Class frmDataEntry
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmDataEntry"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmDataEntry"
+        Me.Text = "9-8*"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.picClose, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlRibbon.ResumeLayout(False)
         Me.pnlFile.ResumeLayout(False)
+        Me.pnlFile.PerformLayout()
         CType(Me.imgDelete, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgOpen, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgNew, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgSave, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlView.ResumeLayout(False)
+        Me.pnlView.PerformLayout()
         CType(Me.imgCalendarView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgListView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlSearchSort.ResumeLayout(False)
+        Me.pnlSearchSort.PerformLayout()
         CType(Me.imgAlphabeticalSort, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgDateSort, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgSearch, System.ComponentModel.ISupportInitialize).EndInit()
@@ -839,4 +959,13 @@ Partial Class frmDataEntry
     Friend WithEvents imgDelete As PictureBox
     Friend WithEvents numPricePerDay As NumericUpDown
     Friend WithEvents dlgOpenRecord As OpenFileDialog
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents lblSearch As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label7 As Label
 End Class
