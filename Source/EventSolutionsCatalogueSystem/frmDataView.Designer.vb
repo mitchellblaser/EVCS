@@ -23,51 +23,51 @@ Partial Class frmDataView
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.picClose = New System.Windows.Forms.PictureBox()
+        Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.lblMenu = New System.Windows.Forms.Label()
         Me.pnlViewCal = New System.Windows.Forms.Panel()
+        Me.lstEventsForDay = New System.Windows.Forms.ListBox()
+        Me.lblDateTitle = New System.Windows.Forms.Label()
+        Me.calDatePicker = New System.Windows.Forms.MonthCalendar()
         Me.pnlRibbon = New System.Windows.Forms.Panel()
-        Me.pnlFile = New System.Windows.Forms.Panel()
         Me.btnView = New System.Windows.Forms.Button()
         Me.btnSearchSort = New System.Windows.Forms.Button()
         Me.btnFile = New System.Windows.Forms.Button()
-        Me.pnlView = New System.Windows.Forms.Panel()
-        Me.pnlSearchSort = New System.Windows.Forms.Panel()
-        Me.pnlViewList = New System.Windows.Forms.Panel()
-        Me.calDatePicker = New System.Windows.Forms.MonthCalendar()
-        Me.lblDateTitle = New System.Windows.Forms.Label()
-        Me.lstEventsForDay = New System.Windows.Forms.ListBox()
+        Me.pnlFile = New System.Windows.Forms.Panel()
         Me.imgDelete = New System.Windows.Forms.PictureBox()
         Me.imgOpen = New System.Windows.Forms.PictureBox()
         Me.imgNew = New System.Windows.Forms.PictureBox()
         Me.imgSave = New System.Windows.Forms.PictureBox()
+        Me.pnlView = New System.Windows.Forms.Panel()
         Me.imgCalendarView = New System.Windows.Forms.PictureBox()
         Me.imgListView = New System.Windows.Forms.PictureBox()
+        Me.pnlSearchSort = New System.Windows.Forms.Panel()
         Me.imgAlphabeticalSort = New System.Windows.Forms.PictureBox()
         Me.imgDateSort = New System.Windows.Forms.PictureBox()
         Me.imgSearch = New System.Windows.Forms.PictureBox()
-        Me.picClose = New System.Windows.Forms.PictureBox()
-        Me.picLogo = New System.Windows.Forms.PictureBox()
+        Me.pnlViewList = New System.Windows.Forms.Panel()
         Me.lstListView = New System.Windows.Forms.ListView()
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.clmDate = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.clmEvent = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel1.SuspendLayout()
+        CType(Me.picClose, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlViewCal.SuspendLayout()
         Me.pnlRibbon.SuspendLayout()
         Me.pnlFile.SuspendLayout()
-        Me.pnlView.SuspendLayout()
-        Me.pnlSearchSort.SuspendLayout()
-        Me.pnlViewList.SuspendLayout()
         CType(Me.imgDelete, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgOpen, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgNew, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgSave, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlView.SuspendLayout()
         CType(Me.imgCalendarView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgListView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlSearchSort.SuspendLayout()
         CType(Me.imgAlphabeticalSort, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgDateSort, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgSearch, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picClose, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlViewList.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -80,6 +80,26 @@ Partial Class frmDataView
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(680, 40)
         Me.Panel1.TabIndex = 3
+        '
+        'picClose
+        '
+        Me.picClose.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.CloseButton
+        Me.picClose.Location = New System.Drawing.Point(630, -2)
+        Me.picClose.Name = "picClose"
+        Me.picClose.Size = New System.Drawing.Size(55, 44)
+        Me.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picClose.TabIndex = 2
+        Me.picClose.TabStop = False
+        '
+        'picLogo
+        '
+        Me.picLogo.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.EventSolutionsLogo_Cropped
+        Me.picLogo.Location = New System.Drawing.Point(9, 6)
+        Me.picLogo.Name = "picLogo"
+        Me.picLogo.Size = New System.Drawing.Size(140, 29)
+        Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picLogo.TabIndex = 1
+        Me.picLogo.TabStop = False
         '
         'lblMenu
         '
@@ -102,6 +122,31 @@ Partial Class frmDataView
         Me.pnlViewCal.Size = New System.Drawing.Size(680, 316)
         Me.pnlViewCal.TabIndex = 4
         '
+        'lstEventsForDay
+        '
+        Me.lstEventsForDay.FormattingEnabled = True
+        Me.lstEventsForDay.Location = New System.Drawing.Point(254, 30)
+        Me.lstEventsForDay.Name = "lstEventsForDay"
+        Me.lstEventsForDay.Size = New System.Drawing.Size(400, 264)
+        Me.lstEventsForDay.TabIndex = 2
+        '
+        'lblDateTitle
+        '
+        Me.lblDateTitle.AutoSize = True
+        Me.lblDateTitle.Font = New System.Drawing.Font("Gill Sans MT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDateTitle.ForeColor = System.Drawing.Color.White
+        Me.lblDateTitle.Location = New System.Drawing.Point(12, 13)
+        Me.lblDateTitle.Name = "lblDateTitle"
+        Me.lblDateTitle.Size = New System.Drawing.Size(59, 16)
+        Me.lblDateTitle.TabIndex = 1
+        Me.lblDateTitle.Text = "Select Date"
+        '
+        'calDatePicker
+        '
+        Me.calDatePicker.Location = New System.Drawing.Point(15, 30)
+        Me.calDatePicker.Name = "calDatePicker"
+        Me.calDatePicker.TabIndex = 0
+        '
         'pnlRibbon
         '
         Me.pnlRibbon.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(118, Byte), Integer), CType(CType(210, Byte), Integer))
@@ -115,18 +160,6 @@ Partial Class frmDataView
         Me.pnlRibbon.Name = "pnlRibbon"
         Me.pnlRibbon.Size = New System.Drawing.Size(680, 84)
         Me.pnlRibbon.TabIndex = 5
-        '
-        'pnlFile
-        '
-        Me.pnlFile.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(232, Byte), Integer))
-        Me.pnlFile.Controls.Add(Me.imgDelete)
-        Me.pnlFile.Controls.Add(Me.imgOpen)
-        Me.pnlFile.Controls.Add(Me.imgNew)
-        Me.pnlFile.Controls.Add(Me.imgSave)
-        Me.pnlFile.Location = New System.Drawing.Point(0, 27)
-        Me.pnlFile.Name = "pnlFile"
-        Me.pnlFile.Size = New System.Drawing.Size(680, 58)
-        Me.pnlFile.TabIndex = 6
         '
         'btnView
         '
@@ -162,62 +195,17 @@ Partial Class frmDataView
         Me.btnFile.Text = "File"
         Me.btnFile.UseVisualStyleBackColor = False
         '
-        'pnlView
+        'pnlFile
         '
-        Me.pnlView.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(232, Byte), Integer))
-        Me.pnlView.Controls.Add(Me.imgCalendarView)
-        Me.pnlView.Controls.Add(Me.imgListView)
-        Me.pnlView.Location = New System.Drawing.Point(0, 26)
-        Me.pnlView.Name = "pnlView"
-        Me.pnlView.Size = New System.Drawing.Size(680, 58)
-        Me.pnlView.TabIndex = 8
-        Me.pnlView.Visible = False
-        '
-        'pnlSearchSort
-        '
-        Me.pnlSearchSort.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(232, Byte), Integer))
-        Me.pnlSearchSort.Controls.Add(Me.imgAlphabeticalSort)
-        Me.pnlSearchSort.Controls.Add(Me.imgDateSort)
-        Me.pnlSearchSort.Controls.Add(Me.imgSearch)
-        Me.pnlSearchSort.Location = New System.Drawing.Point(1, 26)
-        Me.pnlSearchSort.Name = "pnlSearchSort"
-        Me.pnlSearchSort.Size = New System.Drawing.Size(679, 58)
-        Me.pnlSearchSort.TabIndex = 7
-        Me.pnlSearchSort.Visible = False
-        '
-        'pnlViewList
-        '
-        Me.pnlViewList.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer))
-        Me.pnlViewList.Controls.Add(Me.lstListView)
-        Me.pnlViewList.Location = New System.Drawing.Point(0, 123)
-        Me.pnlViewList.Name = "pnlViewList"
-        Me.pnlViewList.Size = New System.Drawing.Size(680, 316)
-        Me.pnlViewList.TabIndex = 5
-        '
-        'calDatePicker
-        '
-        Me.calDatePicker.Location = New System.Drawing.Point(15, 30)
-        Me.calDatePicker.Name = "calDatePicker"
-        Me.calDatePicker.TabIndex = 0
-        '
-        'lblDateTitle
-        '
-        Me.lblDateTitle.AutoSize = True
-        Me.lblDateTitle.Font = New System.Drawing.Font("Gill Sans MT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDateTitle.ForeColor = System.Drawing.Color.White
-        Me.lblDateTitle.Location = New System.Drawing.Point(12, 13)
-        Me.lblDateTitle.Name = "lblDateTitle"
-        Me.lblDateTitle.Size = New System.Drawing.Size(59, 16)
-        Me.lblDateTitle.TabIndex = 1
-        Me.lblDateTitle.Text = "Select Date"
-        '
-        'lstEventsForDay
-        '
-        Me.lstEventsForDay.FormattingEnabled = True
-        Me.lstEventsForDay.Location = New System.Drawing.Point(254, 30)
-        Me.lstEventsForDay.Name = "lstEventsForDay"
-        Me.lstEventsForDay.Size = New System.Drawing.Size(400, 264)
-        Me.lstEventsForDay.TabIndex = 2
+        Me.pnlFile.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(232, Byte), Integer))
+        Me.pnlFile.Controls.Add(Me.imgDelete)
+        Me.pnlFile.Controls.Add(Me.imgOpen)
+        Me.pnlFile.Controls.Add(Me.imgNew)
+        Me.pnlFile.Controls.Add(Me.imgSave)
+        Me.pnlFile.Location = New System.Drawing.Point(0, 27)
+        Me.pnlFile.Name = "pnlFile"
+        Me.pnlFile.Size = New System.Drawing.Size(680, 58)
+        Me.pnlFile.TabIndex = 6
         '
         'imgDelete
         '
@@ -259,6 +247,17 @@ Partial Class frmDataView
         Me.imgSave.TabIndex = 0
         Me.imgSave.TabStop = False
         '
+        'pnlView
+        '
+        Me.pnlView.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(232, Byte), Integer))
+        Me.pnlView.Controls.Add(Me.imgCalendarView)
+        Me.pnlView.Controls.Add(Me.imgListView)
+        Me.pnlView.Location = New System.Drawing.Point(0, 26)
+        Me.pnlView.Name = "pnlView"
+        Me.pnlView.Size = New System.Drawing.Size(680, 58)
+        Me.pnlView.TabIndex = 8
+        Me.pnlView.Visible = False
+        '
         'imgCalendarView
         '
         Me.imgCalendarView.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.calendar_disabled
@@ -278,6 +277,18 @@ Partial Class frmDataView
         Me.imgListView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.imgListView.TabIndex = 0
         Me.imgListView.TabStop = False
+        '
+        'pnlSearchSort
+        '
+        Me.pnlSearchSort.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(232, Byte), Integer))
+        Me.pnlSearchSort.Controls.Add(Me.imgAlphabeticalSort)
+        Me.pnlSearchSort.Controls.Add(Me.imgDateSort)
+        Me.pnlSearchSort.Controls.Add(Me.imgSearch)
+        Me.pnlSearchSort.Location = New System.Drawing.Point(1, 26)
+        Me.pnlSearchSort.Name = "pnlSearchSort"
+        Me.pnlSearchSort.Size = New System.Drawing.Size(679, 58)
+        Me.pnlSearchSort.TabIndex = 7
+        Me.pnlSearchSort.Visible = False
         '
         'imgAlphabeticalSort
         '
@@ -309,29 +320,18 @@ Partial Class frmDataView
         Me.imgSearch.TabIndex = 0
         Me.imgSearch.TabStop = False
         '
-        'picClose
+        'pnlViewList
         '
-        Me.picClose.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.CloseButton
-        Me.picClose.Location = New System.Drawing.Point(630, -2)
-        Me.picClose.Name = "picClose"
-        Me.picClose.Size = New System.Drawing.Size(55, 44)
-        Me.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.picClose.TabIndex = 2
-        Me.picClose.TabStop = False
-        '
-        'picLogo
-        '
-        Me.picLogo.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.EventSolutionsLogo_Cropped
-        Me.picLogo.Location = New System.Drawing.Point(9, 6)
-        Me.picLogo.Name = "picLogo"
-        Me.picLogo.Size = New System.Drawing.Size(140, 29)
-        Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.picLogo.TabIndex = 1
-        Me.picLogo.TabStop = False
+        Me.pnlViewList.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer))
+        Me.pnlViewList.Controls.Add(Me.lstListView)
+        Me.pnlViewList.Location = New System.Drawing.Point(0, 123)
+        Me.pnlViewList.Name = "pnlViewList"
+        Me.pnlViewList.Size = New System.Drawing.Size(680, 316)
+        Me.pnlViewList.TabIndex = 5
         '
         'lstListView
         '
-        Me.lstListView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2})
+        Me.lstListView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.clmDate, Me.clmEvent})
         Me.lstListView.Location = New System.Drawing.Point(12, 14)
         Me.lstListView.Name = "lstListView"
         Me.lstListView.Size = New System.Drawing.Size(656, 289)
@@ -339,13 +339,14 @@ Partial Class frmDataView
         Me.lstListView.UseCompatibleStateImageBehavior = False
         Me.lstListView.View = System.Windows.Forms.View.Details
         '
-        'ColumnHeader1
+        'clmDate
         '
-        Me.ColumnHeader1.Text = "Date"
+        Me.clmDate.Text = "Date"
         '
-        'ColumnHeader2
+        'clmEvent
         '
-        Me.ColumnHeader2.Text = "Event"
+        Me.clmEvent.Text = "Event"
+        Me.clmEvent.Width = 592
         '
         'frmDataView
         '
@@ -362,24 +363,24 @@ Partial Class frmDataView
         Me.Text = "frmDataView"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.picClose, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlViewCal.ResumeLayout(False)
         Me.pnlViewCal.PerformLayout()
         Me.pnlRibbon.ResumeLayout(False)
         Me.pnlFile.ResumeLayout(False)
-        Me.pnlView.ResumeLayout(False)
-        Me.pnlSearchSort.ResumeLayout(False)
-        Me.pnlViewList.ResumeLayout(False)
         CType(Me.imgDelete, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgOpen, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgNew, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgSave, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlView.ResumeLayout(False)
         CType(Me.imgCalendarView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgListView, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlSearchSort.ResumeLayout(False)
         CType(Me.imgAlphabeticalSort, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgDateSort, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgSearch, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picClose, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlViewList.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -410,6 +411,6 @@ Partial Class frmDataView
     Friend WithEvents lblDateTitle As Label
     Friend WithEvents lstEventsForDay As ListBox
     Friend WithEvents lstListView As ListView
-    Friend WithEvents ColumnHeader1 As ColumnHeader
-    Friend WithEvents ColumnHeader2 As ColumnHeader
+    Friend WithEvents clmDate As ColumnHeader
+    Friend WithEvents clmEvent As ColumnHeader
 End Class
