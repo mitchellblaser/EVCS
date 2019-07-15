@@ -102,7 +102,9 @@ Partial Class frmEditUsers
         'lstUsers
         '
         Me.lstUsers.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colUsername, Me.colPassword, Me.colPrivelige})
+        Me.lstUsers.FullRowSelect = True
         Me.lstUsers.Location = New System.Drawing.Point(16, 57)
+        Me.lstUsers.MultiSelect = False
         Me.lstUsers.Name = "lstUsers"
         Me.lstUsers.Size = New System.Drawing.Size(534, 355)
         Me.lstUsers.TabIndex = 11

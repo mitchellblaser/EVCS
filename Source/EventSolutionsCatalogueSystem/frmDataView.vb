@@ -18,6 +18,7 @@ Public Class frmDataView
     Dim calendarEntries(calendarStoreSize()) As calendarEntry
     Dim calendarEvents(calendarStoreSize() * 2) As calendarEvent
 
+    Dim calBackend(calendarStoreSize() * 2) As String
     Dim listBackend(calendarStoreSize() * 2) As String
 
     Private Sub btnFile_Click(sender As Object, e As EventArgs) Handles btnFile.Click
@@ -59,13 +60,18 @@ Public Class frmDataView
     End Sub
 
     Private Sub frmDataView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Read all files in equipment directory
+        'Read all files in equipment directory CAL
         Dim CalDi As New DirectoryInfo(evRootPath & hireStoreLocation)
         Dim CalFileArray As FileInfo() = CalDi.GetFiles()
         Dim i As Integer = 0 'Declare a counter to use in the loop below
         Dim f As Integer = 0
         Dim readline As String = ""
         Dim readlines As String
+
+        'LIST
+        Dim listWriter(2) As String
+        Dim newItem As ListViewItem
+        Dim listIndex As Integer = 0
 
         'Process them and load into a structure.
         For Each file In CalFileArray
@@ -85,7 +91,7 @@ Public Class frmDataView
                 readlines = ""
             End Using
 
-            'add dates
+            'add dates for cal view
             calDatePicker.AddBoldedDate(calendarEntries(i).DateBeginning)
             calDatePicker.AddBoldedDate(calendarEntries(i).DateEnding)
 
@@ -99,6 +105,22 @@ Public Class frmDataView
             calendarEvents(f).calEvent = calendarEntries(i).ClientName & " - Equipment Returned."
             calendarEvents(f).otherInformation = calendarEntries(i).OtherInformation
             f = f + 1
+
+            'add dates for list view
+
+            listWriter(0) = calendarEntries(i).DateBeginning.Date
+            listWriter(1) = calendarEntries(i).ClientName & " - Equipment Checked Out."
+            listBackend(listIndex) = calendarEntries(i).OtherInformation
+            listIndex = listIndex + 1
+            newItem = New ListViewItem(listWriter)
+            lstListView.Items.Add(newItem)
+
+            listWriter(0) = calendarEntries(i).DateEnding.Date
+            listWriter(1) = calendarEntries(i).ClientName & " - Equipment Returned."
+            listBackend(listIndex) = calendarEntries(i).OtherInformation
+            listIndex = listIndex + 1
+            newItem = New ListViewItem(listWriter)
+            lstListView.Items.Add(newItem)
 
             'increment i by 1
             i = i + 1
@@ -115,7 +137,7 @@ Public Class frmDataView
         For i As Integer = 0 To calendarEvents.Length - 1
             If calendarEvents(i).dateTime.Date = selectedDate Then
                 lstEventsForDay.Items.Add(calendarEvents(i).calEvent)
-                listBackend(listIndex) = calendarEvents(i).otherInformation
+                calBackend(listIndex) = calendarEvents(i).otherInformation
                 listIndex = listIndex + 1
             End If
         Next
@@ -123,7 +145,12 @@ Public Class frmDataView
     End Sub
 
     Private Sub btnInfo_Click(sender As Object, e As EventArgs) Handles btnInfo.Click
-        MsgBox(listBackend(lstEventsForDay.SelectedIndex))
+        If lstEventsForDay.SelectedIndex = -1 Then
+            MsgBox("Select an item first.")
+        Else
+            MsgBox(calBackend(lstEventsForDay.SelectedIndex))
+        End If
+
     End Sub
 
     Private Sub imgListView_Click(sender As Object, e As EventArgs) Handles imgListView.Click
@@ -134,5 +161,14 @@ Public Class frmDataView
     Private Sub imgCalendarView_Click(sender As Object, e As EventArgs) Handles imgCalendarView.Click
         pnlViewList.Hide()
         pnlViewCal.Show()
+    End Sub
+
+    Private Sub btnListInfo_Click(sender As Object, e As EventArgs) Handles btnListInfo.Click
+        If lstListView.SelectedIndices.Count = 0 Then
+            MsgBox("Select an item first.")
+        Else
+            MsgBox(listBackend(lstListView.SelectedIndices(0)))
+        End If
+
     End Sub
 End Class

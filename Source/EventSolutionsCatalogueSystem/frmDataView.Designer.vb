@@ -51,6 +51,7 @@ Partial Class frmDataView
         Me.clmDate = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.clmEvent = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnInfo = New System.Windows.Forms.Button()
+        Me.btnListInfo = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.picClose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -326,6 +327,7 @@ Partial Class frmDataView
         'pnlViewList
         '
         Me.pnlViewList.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer))
+        Me.pnlViewList.Controls.Add(Me.btnListInfo)
         Me.pnlViewList.Controls.Add(Me.lstListView)
         Me.pnlViewList.Location = New System.Drawing.Point(0, 123)
         Me.pnlViewList.Name = "pnlViewList"
@@ -335,9 +337,11 @@ Partial Class frmDataView
         'lstListView
         '
         Me.lstListView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.clmDate, Me.clmEvent})
+        Me.lstListView.FullRowSelect = True
         Me.lstListView.Location = New System.Drawing.Point(12, 14)
+        Me.lstListView.MultiSelect = False
         Me.lstListView.Name = "lstListView"
-        Me.lstListView.Size = New System.Drawing.Size(656, 289)
+        Me.lstListView.Size = New System.Drawing.Size(656, 266)
         Me.lstListView.TabIndex = 0
         Me.lstListView.UseCompatibleStateImageBehavior = False
         Me.lstListView.View = System.Windows.Forms.View.Details
@@ -345,11 +349,12 @@ Partial Class frmDataView
         'clmDate
         '
         Me.clmDate.Text = "Date"
+        Me.clmDate.Width = 120
         '
         'clmEvent
         '
         Me.clmEvent.Text = "Event"
-        Me.clmEvent.Width = 592
+        Me.clmEvent.Width = 532
         '
         'btnInfo
         '
@@ -360,6 +365,15 @@ Partial Class frmDataView
         Me.btnInfo.Text = "More Info"
         Me.btnInfo.UseVisualStyleBackColor = True
         '
+        'btnListInfo
+        '
+        Me.btnListInfo.Location = New System.Drawing.Point(593, 286)
+        Me.btnListInfo.Name = "btnListInfo"
+        Me.btnListInfo.Size = New System.Drawing.Size(75, 23)
+        Me.btnListInfo.TabIndex = 1
+        Me.btnListInfo.Text = "More Info"
+        Me.btnListInfo.UseVisualStyleBackColor = True
+        '
         'frmDataView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -367,8 +381,8 @@ Partial Class frmDataView
         Me.ClientSize = New System.Drawing.Size(680, 438)
         Me.Controls.Add(Me.pnlRibbon)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.pnlViewCal)
         Me.Controls.Add(Me.pnlViewList)
+        Me.Controls.Add(Me.pnlViewCal)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmDataView"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -426,4 +440,5 @@ Partial Class frmDataView
     Friend WithEvents clmDate As ColumnHeader
     Friend WithEvents clmEvent As ColumnHeader
     Friend WithEvents btnInfo As Button
+    Friend WithEvents btnListInfo As Button
 End Class
