@@ -336,8 +336,12 @@ Partial Class frmDataView
         '
         'lstListView
         '
+        Me.lstListView.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer))
+        Me.lstListView.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lstListView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.clmDate, Me.clmEvent})
+        Me.lstListView.ForeColor = System.Drawing.Color.White
         Me.lstListView.FullRowSelect = True
+        Me.lstListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.lstListView.Location = New System.Drawing.Point(12, 14)
         Me.lstListView.MultiSelect = False
         Me.lstListView.Name = "lstListView"

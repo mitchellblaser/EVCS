@@ -34,7 +34,8 @@ Partial Class frmAddUserBox
         'lblUsername
         '
         Me.lblUsername.AutoSize = True
-        Me.lblUsername.Location = New System.Drawing.Point(13, 13)
+        Me.lblUsername.ForeColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(118, Byte), Integer), CType(CType(210, Byte), Integer))
+        Me.lblUsername.Location = New System.Drawing.Point(11, 13)
         Me.lblUsername.Name = "lblUsername"
         Me.lblUsername.Size = New System.Drawing.Size(55, 13)
         Me.lblUsername.TabIndex = 0
@@ -43,6 +44,7 @@ Partial Class frmAddUserBox
         'lblPassword
         '
         Me.lblPassword.AutoSize = True
+        Me.lblPassword.ForeColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(118, Byte), Integer), CType(CType(210, Byte), Integer))
         Me.lblPassword.Location = New System.Drawing.Point(12, 39)
         Me.lblPassword.Name = "lblPassword"
         Me.lblPassword.Size = New System.Drawing.Size(53, 13)
@@ -52,7 +54,8 @@ Partial Class frmAddUserBox
         'lblAccessLevel
         '
         Me.lblAccessLevel.AutoSize = True
-        Me.lblAccessLevel.Location = New System.Drawing.Point(13, 65)
+        Me.lblAccessLevel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(118, Byte), Integer), CType(CType(210, Byte), Integer))
+        Me.lblAccessLevel.Location = New System.Drawing.Point(12, 65)
         Me.lblAccessLevel.Name = "lblAccessLevel"
         Me.lblAccessLevel.Size = New System.Drawing.Size(71, 13)
         Me.lblAccessLevel.TabIndex = 2
@@ -85,6 +88,8 @@ Partial Class frmAddUserBox
         '
         'btnOK
         '
+        Me.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnOK.ForeColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(118, Byte), Integer), CType(CType(210, Byte), Integer))
         Me.btnOK.Location = New System.Drawing.Point(203, 89)
         Me.btnOK.Name = "btnOK"
         Me.btnOK.Size = New System.Drawing.Size(75, 23)
@@ -96,6 +101,7 @@ Partial Class frmAddUserBox
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(298, 120)
         Me.Controls.Add(Me.btnOK)
         Me.Controls.Add(Me.cmbAccessLevel)
@@ -104,7 +110,9 @@ Partial Class frmAddUserBox
         Me.Controls.Add(Me.lblAccessLevel)
         Me.Controls.Add(Me.lblPassword)
         Me.Controls.Add(Me.lblUsername)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmAddUserBox"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add User"
         Me.ResumeLayout(False)
         Me.PerformLayout()

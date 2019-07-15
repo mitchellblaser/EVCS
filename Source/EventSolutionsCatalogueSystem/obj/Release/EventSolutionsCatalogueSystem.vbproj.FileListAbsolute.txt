@@ -4,6 +4,7 @@ C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\bin\Release\Eve
 C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\bin\Release\EventSolutionsCatalogueSystem.xml
 C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Release\EventSolutionsCatalogueSystem.frmAddUserBox.resources
 C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Release\EventSolutionsCatalogueSystem.frmDataEntry.resources
+C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Release\EventSolutionsCatalogueSystem.frmDataView.resources
 C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Release\EventSolutionsCatalogueSystem.frmEditUsers.resources
 C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Release\EventSolutionsCatalogueSystem.frmLogin.resources
 C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Release\EventSolutionsCatalogueSystem.frmMainMenu.resources
