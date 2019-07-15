@@ -1,4 +1,25 @@
-﻿Public Class frmDataView
+﻿Imports System.IO
+
+Public Class frmDataView
+
+    Structure calendarEntry
+        Dim DateBeginning As Date
+        Dim DateEnding As Date
+        Dim ClientName As String
+        Dim OtherInformation As String
+    End Structure
+
+    Structure calendarEvent
+        Dim dateTime As Date
+        Dim calEvent As String
+        Dim otherInformation As String
+    End Structure
+
+    Dim calendarEntries(calendarStoreSize()) As calendarEntry
+    Dim calendarEvents(calendarStoreSize() * 2) As calendarEvent
+
+    Dim listBackend(calendarStoreSize() * 2) As String
+
     Private Sub btnFile_Click(sender As Object, e As EventArgs) Handles btnFile.Click
         pnlFile.Visible = True
         pnlSearchSort.Visible = False
@@ -37,7 +58,71 @@
         frmMainMenu.Show()
     End Sub
 
+    Private Sub frmDataView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Read all files in equipment directory
+        Dim CalDi As New DirectoryInfo(evRootPath & hireStoreLocation)
+        Dim CalFileArray As FileInfo() = CalDi.GetFiles()
+        Dim i As Integer = 0 'Declare a counter to use in the loop below
+        Dim f As Integer = 0
+        Dim readline As String = ""
+        Dim readlines As String
+
+        'Process them and load into a structure.
+        For Each file In CalFileArray
+            Using fileread As New StreamReader(evRootPath & hireStoreLocation & file.Name)
+                calendarEntries(i).ClientName = fileread.ReadLine()
+                calendarEntries(i).DateBeginning = fileread.ReadLine()
+                calendarEntries(i).DateEnding = fileread.ReadLine()
+                While True
+                    readline = fileread.ReadLine()
+                    If readline Is Nothing Then
+                        Exit While
+                    Else
+                        readlines = readlines & readline & " [x" & fileread.ReadLine() & "] ($" & fileread.ReadLine() & ")" & vbNewLine
+                    End If
+                End While
+                calendarEntries(i).OtherInformation = readlines
+                readlines = ""
+            End Using
+
+            'add dates
+            calDatePicker.AddBoldedDate(calendarEntries(i).DateBeginning)
+            calDatePicker.AddBoldedDate(calendarEntries(i).DateEnding)
+
+            calDatePicker.UpdateBoldedDates()
+
+            calendarEvents(f).dateTime = calendarEntries(i).DateBeginning
+            calendarEvents(f).calEvent = calendarEntries(i).ClientName & " - Equipment Checked Out."
+            calendarEvents(f).otherInformation = calendarEntries(i).OtherInformation
+            f = f + 1
+            calendarEvents(f).dateTime = calendarEntries(i).DateEnding
+            calendarEvents(f).calEvent = calendarEntries(i).ClientName & " - Equipment Returned."
+            calendarEvents(f).otherInformation = calendarEntries(i).OtherInformation
+            f = f + 1
+
+            'increment i by 1
+            i = i + 1
+        Next
+    End Sub
+
     Private Sub calDatePicker_DateChanged(sender As Object, e As DateRangeEventArgs) Handles calDatePicker.DateChanged
 
+        Dim selectedDate As Date
+        Dim listIndex As Integer = 0
+
+        selectedDate = calDatePicker.SelectionStart 'we can only select one so this just gets the selected date.
+        lstEventsForDay.Items.Clear()
+        For i As Integer = 0 To calendarEvents.Length - 1
+            If calendarEvents(i).dateTime.Date = selectedDate Then
+                lstEventsForDay.Items.Add(calendarEvents(i).calEvent)
+                listBackend(listIndex) = calendarEvents(i).otherInformation
+                listIndex = listIndex + 1
+            End If
+        Next
+
+    End Sub
+
+    Private Sub btnInfo_Click(sender As Object, e As EventArgs) Handles btnInfo.Click
+        MsgBox(listBackend(lstEventsForDay.SelectedIndex))
     End Sub
 End Class

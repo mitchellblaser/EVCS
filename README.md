@@ -17,9 +17,9 @@
 - [x] Create *frmDataView.vb*
 - [x] Make select universal in *frmDataEntry.vb*
 - [ ] Also, fix the quantity
-- [ ] Bold dates with events in on Calendar view of *frmDataView.vb*
-- [ ] Create Calendar View panel in *frmDataView.vb*
-- [ ] Create List View panel in *frmDataView.vb*
+- [x] Bold dates with events in on Calendar view of *frmDataView.vb*
+- [x] Create Calendar View panel in *frmDataView.vb*
+- [x] Create List View panel in *frmDataView.vb*
 - [ ] Add labels under icons in ribbon to increase readability.
 - [ ] Style *frmEditUsers.vb* to meet Design Guidelines in EVCS Design Folio.
 - [ ] Style *frmAddUserBox.vb* to meet Design Guidelines in EVCS Design Folio.

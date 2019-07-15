@@ -50,6 +50,7 @@ Partial Class frmDataView
         Me.lstListView = New System.Windows.Forms.ListView()
         Me.clmDate = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.clmEvent = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.btnInfo = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.picClose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -114,6 +115,7 @@ Partial Class frmDataView
         'pnlViewCal
         '
         Me.pnlViewCal.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer))
+        Me.pnlViewCal.Controls.Add(Me.btnInfo)
         Me.pnlViewCal.Controls.Add(Me.lstEventsForDay)
         Me.pnlViewCal.Controls.Add(Me.lblDateTitle)
         Me.pnlViewCal.Controls.Add(Me.calDatePicker)
@@ -144,6 +146,7 @@ Partial Class frmDataView
         'calDatePicker
         '
         Me.calDatePicker.Location = New System.Drawing.Point(15, 30)
+        Me.calDatePicker.MaxSelectionCount = 1
         Me.calDatePicker.Name = "calDatePicker"
         Me.calDatePicker.TabIndex = 0
         '
@@ -348,6 +351,15 @@ Partial Class frmDataView
         Me.clmEvent.Text = "Event"
         Me.clmEvent.Width = 592
         '
+        'btnInfo
+        '
+        Me.btnInfo.Location = New System.Drawing.Point(167, 271)
+        Me.btnInfo.Name = "btnInfo"
+        Me.btnInfo.Size = New System.Drawing.Size(75, 23)
+        Me.btnInfo.TabIndex = 3
+        Me.btnInfo.Text = "More Info"
+        Me.btnInfo.UseVisualStyleBackColor = True
+        '
         'frmDataView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -355,8 +367,8 @@ Partial Class frmDataView
         Me.ClientSize = New System.Drawing.Size(680, 438)
         Me.Controls.Add(Me.pnlRibbon)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.pnlViewList)
         Me.Controls.Add(Me.pnlViewCal)
+        Me.Controls.Add(Me.pnlViewList)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmDataView"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -413,4 +425,5 @@ Partial Class frmDataView
     Friend WithEvents lstListView As ListView
     Friend WithEvents clmDate As ColumnHeader
     Friend WithEvents clmEvent As ColumnHeader
+    Friend WithEvents btnInfo As Button
 End Class
