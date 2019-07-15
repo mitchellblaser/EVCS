@@ -328,4 +328,19 @@ Public Class frmDataEntry
         totalDays = (totalDays / 24) + 1
         lblTotal.Text = "Total: $" & totalDays * totalPrice
     End Function
+
+    Private Sub lstEquipment_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstEquipment.SelectedIndexChanged
+        lstQuantity.SelectedIndex = lstEquipment.SelectedIndex
+        lstPrice.SelectedIndex = lstEquipment.SelectedIndex
+    End Sub
+
+    Private Sub lstQuantity_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstQuantity.SelectedIndexChanged
+        lstEquipment.SelectedIndex = lstQuantity.SelectedIndex
+        lstPrice.SelectedIndex = lstQuantity.SelectedIndex
+    End Sub
+
+    Private Sub lstPrice_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstPrice.SelectedIndexChanged
+        lstEquipment.SelectedIndex = lstPrice.SelectedIndex
+        lstQuantity.SelectedIndex = lstPrice.SelectedIndex
+    End Sub
 End Class

@@ -15,6 +15,8 @@
 #### <u>To Do:</u> *(Cleared as of 14/7/19)*
 
 - [x] Create *frmDataView.vb*
+- [x] Make select universal in *frmDataEntry.vb*
+- [ ] Also, fix the quantity
 - [ ] Bold dates with events in on Calendar view of *frmDataView.vb*
 - [ ] Create Calendar View panel in *frmDataView.vb*
 - [ ] Create List View panel in *frmDataView.vb*
@@ -37,3 +39,5 @@
 - [ ] Create installer with wizard to set up directory structures, user files, program files, etc.
 - [ ] Add "Management" form (Admin only) which will allow for exporting data files with information to email.
 - [ ] Send Invoice from hire form once complete? Very, Very long term stretchy goal
+- [ ] Fix the ding
+- [ ] Fix password error message issue
