@@ -156,9 +156,9 @@ Partial Class frmDataView
         Me.pnlRibbon.Controls.Add(Me.btnView)
         Me.pnlRibbon.Controls.Add(Me.btnSearchSort)
         Me.pnlRibbon.Controls.Add(Me.btnFile)
-        Me.pnlRibbon.Controls.Add(Me.pnlFile)
         Me.pnlRibbon.Controls.Add(Me.pnlView)
         Me.pnlRibbon.Controls.Add(Me.pnlSearchSort)
+        Me.pnlRibbon.Controls.Add(Me.pnlFile)
         Me.pnlRibbon.Location = New System.Drawing.Point(0, 39)
         Me.pnlRibbon.Name = "pnlRibbon"
         Me.pnlRibbon.Size = New System.Drawing.Size(680, 84)
@@ -263,7 +263,7 @@ Partial Class frmDataView
         '
         'imgCalendarView
         '
-        Me.imgCalendarView.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.calendar_disabled
+        Me.imgCalendarView.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.calendar
         Me.imgCalendarView.Location = New System.Drawing.Point(62, 3)
         Me.imgCalendarView.Name = "imgCalendarView"
         Me.imgCalendarView.Size = New System.Drawing.Size(50, 50)
@@ -273,7 +273,7 @@ Partial Class frmDataView
         '
         'imgListView
         '
-        Me.imgListView.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.list_disabled
+        Me.imgListView.Image = Global.EventSolutionsCatalogueSystem.My.Resources.Resources.list
         Me.imgListView.Location = New System.Drawing.Point(5, 3)
         Me.imgListView.Name = "imgListView"
         Me.imgListView.Size = New System.Drawing.Size(50, 50)

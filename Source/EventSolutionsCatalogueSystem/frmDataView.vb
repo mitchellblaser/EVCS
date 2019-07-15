@@ -125,4 +125,14 @@ Public Class frmDataView
     Private Sub btnInfo_Click(sender As Object, e As EventArgs) Handles btnInfo.Click
         MsgBox(listBackend(lstEventsForDay.SelectedIndex))
     End Sub
+
+    Private Sub imgListView_Click(sender As Object, e As EventArgs) Handles imgListView.Click
+        pnlViewCal.Hide()
+        pnlViewList.Show()
+    End Sub
+
+    Private Sub imgCalendarView_Click(sender As Object, e As EventArgs) Handles imgCalendarView.Click
+        pnlViewList.Hide()
+        pnlViewCal.Show()
+    End Sub
 End Class

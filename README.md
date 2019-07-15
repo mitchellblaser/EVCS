@@ -24,8 +24,8 @@
 - [ ] Style *frmEditUsers.vb* to meet Design Guidelines in EVCS Design Folio.
 - [ ] Style *frmAddUserBox.vb* to meet Design Guidelines in EVCS Design Folio.
 - [x] Upload Design Guidelines to GitHub Repository as a backup.
-- [ ] Add 'View Calendar' functionality to *frmDataView.vb*
-- [ ] Add 'View List' functionality to *frmDataView.vb*
+- [x] Add 'View Calendar' functionality to *frmDataView.vb*
+- [x] Add 'View List' functionality to *frmDataView.vb*
 - [ ] Create more secure method of encryption than a +7 cypher.
 - [ ] Add the ability to click+drag on the window panels and move them around (this is a problem with the way the windows are designed and not VB or Windows.) This will need to be done for every form.
 - [ ] Create search function which returns a list of indexes which correlate to search results in the input list.
