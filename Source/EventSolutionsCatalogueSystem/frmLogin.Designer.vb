@@ -118,6 +118,7 @@ Partial Class frmLogin
         '
         'btnQuit
         '
+        Me.btnQuit.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnQuit.Font = New System.Drawing.Font("Gill Sans MT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnQuit.ForeColor = System.Drawing.Color.White
@@ -142,9 +143,11 @@ Partial Class frmLogin
         '
         'frmLogin
         '
+        Me.AcceptButton = Me.btnLogin
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer))
+        Me.CancelButton = Me.btnQuit
         Me.ClientSize = New System.Drawing.Size(295, 132)
         Me.Controls.Add(Me.btnLogin)
         Me.Controls.Add(Me.btnQuit)

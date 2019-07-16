@@ -35,16 +35,12 @@ Public Class frmLogin
                 privilegeLine = Decrypt(fileRead.ReadLine())
 
                 If usernameLine = txtUser.Text Then
-                    errorLevel = 0
                     If passwordLine = txtPass.Text Then
-                        loginPass = 1
                         errorLevel = 0
                         loggedInUser = txtUser.Text
                         loggedInPrivilege = privilegeLine
                         frmMainMenu.Show()
                         Me.Hide()
-                    Else
-                        errorLevel = 2
                     End If
                 Else
                     errorLevel = 1
@@ -52,22 +48,13 @@ Public Class frmLogin
             End While
         End Using
 
-        If loginPass = 0 Then
-            If errorLevel = 1 Then
-                MsgBox("Username not Recognized.")
-            ElseIf errorLevel = 2 Then
-                MsgBox("Username and Password do not Match.")
-            End If
+
+        If errorLevel = 1 Then
+            MsgBox("Incorrect login details.")
         End If
     End Sub
 
     Private Sub btnQuit_Click(sender As Object, e As EventArgs) Handles btnQuit.Click
         Application.Exit()
-    End Sub
-
-    Private Sub txtPass_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPass.KeyPress
-        If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
-            evLogin()
-        End If
     End Sub
 End Class

@@ -15,6 +15,7 @@ EventSolutions Catalogue System
 #### <u>To Do:</u> *(Cleared as of 16/7/19)*
 
 - [ ] Also, fix the quantity
+- [ ] add error check for dialog path selection cancel
 - [ ] Add 'Sort by Date (newest)' sorting algorithm
 - [ ] Add 'Sort by Date (oldest)' sorting algorithm
 - [ ] Add 'Sort by Alphabetical (A-Z)' sorting algorithm

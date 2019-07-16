@@ -77,12 +77,27 @@ EventSolutionsCatalogueSystem
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:EventSolutionsCatalogueSystem.My.Resources.Resources.new_disabled">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:EventSolutionsCatalogueSystem.My.Resources.Resources.open">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:EventSolutionsCatalogueSystem.My.Resources.Resources.open_disabled">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:EventSolutionsCatalogueSystem.My.Resources.Resources.save">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:EventSolutionsCatalogueSystem.My.Resources.Resources.save_disabled">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -98,6 +113,11 @@ EventSolutionsCatalogueSystem
 </summary>
 </member>
 <member name="P:EventSolutionsCatalogueSystem.My.Resources.Resources.trash">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:EventSolutionsCatalogueSystem.My.Resources.Resources.trash_disabled">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
