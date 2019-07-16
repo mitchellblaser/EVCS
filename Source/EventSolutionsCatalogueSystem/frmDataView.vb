@@ -59,7 +59,17 @@ Public Class frmDataView
         frmMainMenu.Show()
     End Sub
 
+    Dim itemsInCalendar As Integer
+
     Private Sub frmDataView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        'Initialize array to blank data
+        For g = 0 To calendarStoreSize() * 2
+            calendarEvents(g).calEvent = ""
+            calendarEvents(g).otherInformation = ""
+        Next
+
+
         'Read all files in equipment directory CAL
         Dim CalDi As New DirectoryInfo(evRootPath & hireStoreLocation)
         Dim CalFileArray As FileInfo() = CalDi.GetFiles()
@@ -125,6 +135,7 @@ Public Class frmDataView
             'increment i by 1
             i = i + 1
         Next
+        itemsInCalendar = f
     End Sub
 
     Private Sub calDatePicker_DateChanged(sender As Object, e As DateRangeEventArgs) Handles calDatePicker.DateChanged
@@ -167,11 +178,61 @@ Public Class frmDataView
         If lstListView.SelectedIndices.Count = 0 Then
             MsgBox("Select an item first.")
         Else
-            MsgBox(vbNewLine & lstListView.SelectedItems(0).SubItems(1).Text & vbNewLine & listBackend(lstListView.SelectedIndices(0)))
+            MsgBox(lstListView.SelectedItems(0).SubItems(1).Text & vbNewLine & listBackend(lstListView.SelectedIndices(0)))
         End If
     End Sub
 
     Private Sub imgDateSort_Click(sender As Object, e As EventArgs) Handles imgDateSort.Click
+        Dim smallestPos As Integer = -1
+        Dim temp As Date
+        Dim tempEvent As String
+        Dim tempInfo As String
+
+        Dim listWriter(2) As String
+        Dim newItem As ListViewItem
+        Dim listIndex As Integer = 0
+
+        For i As Integer = 0 To calendarEvents.Length - 2
+            smallestPos = i
+            For f = i + 1 To calendarEvents.Length - 1
+                If calendarEvents(f).dateTime > calendarEvents(smallestPos).dateTime Then
+                    smallestPos = f
+                End If
+            Next
+
+            If i <> smallestPos Then
+                temp = calendarEvents(smallestPos).dateTime
+                calendarEvents(smallestPos).dateTime = calendarEvents(i).dateTime
+                calendarEvents(i).dateTime = temp
+
+                tempEvent = calendarEvents(smallestPos).calEvent
+                calendarEvents(smallestPos).calEvent = calendarEvents(i).calEvent
+                calendarEvents(i).calEvent = tempEvent
+
+                tempInfo = calendarEvents(smallestPos).otherInformation
+                calendarEvents(smallestPos).otherInformation = calendarEvents(i).otherInformation
+                calendarEvents(i).otherInformation = tempInfo
+
+            End If
+        Next
+
+        lstListView.Items.Clear()
+        For i = 0 To calendarEvents.Length - 1
+
+            'lstListView.Items.Add(calendarEvents(i).dateTime)
+
+            If calendarEvents(i).otherInformation <> "" Then
+                listWriter(0) = calendarEvents(i).dateTime.Date
+                listWriter(1) = calendarEvents(i).calEvent
+                listBackend(listIndex) = calendarEvents(i).otherInformation
+                listIndex = listIndex + 1
+                newItem = New ListViewItem(listWriter)
+                lstListView.Items.Add(newItem)
+
+            End If
+        Next
+
+
 
     End Sub
 
