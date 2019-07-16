@@ -34,6 +34,7 @@ Public Class frmLogin
 
         '                                                                       'Declare a local variable to keep track of login issues if they happen.
         Dim errorLevel As Integer = 0
+        Dim loginOK As Integer = 0
 
         Using fileRead As New StreamReader(evRootPath & userStoreLocation, True) 'Recursively loop until a username matches what's been entered
             While True                                                          'Loop "forever". Not really though, this is just the easiest way to read in every line of the data in groups of three.
@@ -52,6 +53,7 @@ Public Class frmLogin
                 If usernameLine = txtUser.Text Then                             'If the current username (read in from file) matches the username that the user entered into the text box,
                     If passwordLine = txtPass.Text Then                         'We also check the password which relates to the username.
                         errorLevel = 0                                          'If it all checks out, we set errorlevel to 0, which indicates that there isn't a problem.
+                        loginOK = 1
                         loggedInUser = txtUser.Text                             'Set the public username variable (for checking privelige, etc.)
                         loggedInPrivilege = privilegeLine                       'Set the public privelige variable (for checking privelige, etc.)
                         frmMainMenu.Show()                                      'Show the main menu
@@ -60,10 +62,12 @@ Public Class frmLogin
                 End If
             End While
         End Using                                                               'close the file
-
-        If errorLevel = 1 Then                                                  'Check for errors; if the login details were wrong:
-            MsgBox("Incorrect login details.")                                  'Show an error telling the user to retry.
+        If loginOK <> 1 Then
+            If errorLevel = 1 Then                                                  'Check for errors; if the login details were wrong:
+                MsgBox("Incorrect login details.")                                  'Show an error telling the user to retry.
+            End If
         End If
+
     End Sub
 
 End Class
