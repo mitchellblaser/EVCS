@@ -23,32 +23,32 @@ Public Class frmMainMenu 'Make the form's class
 
     Private Sub btnAddEquipment_Click(sender As Object, e As EventArgs) Handles btnAddEquipment.Click
         selectedTask = "AddEquipment"
-        frmDataEntry.Show() 'Show the relevant form. 
-        Me.Hide() 'Hide the main menu form, but don't close it. We need selectedTask still so it has to stay open in the background.
+        frmDataEntry.Show()                     'Show the relevant form. 
+        Me.Hide()                               'Hide the main menu form, but don't close it. We need selectedTask still so it has to stay open in the background.
     End Sub
 
     Private Sub btnAddHire_Click(sender As Object, e As EventArgs) Handles btnAddHire.Click
-        selectedTask = "AddHire" 'Set selectedTask to the relevant value
-        frmDataEntry.Show() 'Show the relevant form. 
-        Me.Hide() 'Hide the main menu form, but don't close it. We need selectedTask still so it has to stay open in the background.
+        selectedTask = "AddHire"                'Set selectedTask to the relevant value
+        frmDataEntry.Show()                     'Show the relevant form. 
+        Me.Hide()                               'Hide the main menu form, but don't close it. We need selectedTask still so it has to stay open in the background.
     End Sub
 
     Private Sub btnViewData_Click(sender As Object, e As EventArgs) Handles btnViewData.Click
-        selectedTask = "ViewData" 'Set selectedTask to the relevant value
-        frmDataView.Show() 'Show the relevant form. 
-        Me.Hide() 'Hide the main menu form, but don't close it. We need selectedTask still so it has to stay open in the background.
+        selectedTask = "ViewData"               'Set selectedTask to the relevant value
+        frmDataView.Show()                      'Show the relevant form. 
+        Me.Hide()                               'Hide the main menu form, but don't close it. We need selectedTask still so it has to stay open in the background.
     End Sub
 
     Private Sub picClose_Click(sender As Object, e As EventArgs) Handles picClose.Click
-        Me.Close() 'Close the main menu form.
-        frmLogin.Show() 'Show the login form.
-        frmLogin.txtUser.Text = "" 'Set the login form's text boxes to be blank again. 
-        frmLogin.txtPass.Text = "" 'If we didn't do that they would still have text and the user would have to clear it manually.
-        frmLogin.txtUser.Focus() 'Focus the username text box (the first thing people will want to type into)
+        Me.Close()                              'Close the main menu form.
+        frmLogin.Show()                         'Show the login form.
+        frmLogin.txtUser.Text = ""              'Set the login form's text boxes to be blank again. 
+        frmLogin.txtPass.Text = ""              'If we didn't do that they would still have text and the user would have to clear it manually.
+        frmLogin.txtUser.Focus()                'Focus the username text box (the first thing people will want to type into)
     End Sub
 
     Private Sub btnEditUsers_Click(sender As Object, e As EventArgs) Handles btnEditUsers.Click
-        frmEditUsers.Show() 'Show the relevant form. 
-        Me.Hide() 'Hide the main menu form, but don't close it. We need selectedTask still so it has to stay open in the background.
+        frmEditUsers.Show()                     'Show the relevant form. 
+        Me.Hide()                               'Hide the main menu form, but don't close it. We need selectedTask still so it has to stay open in the background.
     End Sub
 End Class
