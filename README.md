@@ -1,6 +1,8 @@
 EventSolutions Catalogue System
 
-#### A (*less*) simple inventory system written in *VB.NET*
+#### A (*less*) simple inventory system written in *VB.NET :(*
+
+"it kind of works"
 
 > **<u>Installation</u>**
 >
@@ -12,18 +14,10 @@ EventSolutions Catalogue System
 
 #### <u>To Do:</u> *(Cleared as of 16/7/19)*
 
-- [ ] Also, fix the quantity
-- [x] add error check for dialog path selection cancel
-- [ ] Add 'Sort by Date (newest)' sorting algorithm
-- [ ] Add 'Sort by Alphabetical (A-Z)' sorting algorithm
-- [ ] Migrate sorting algorithms to *frmDataView.vb*'s List View
-- [ ] Clean up all the (very) messy code
-- [x] Fix the ding
-- [x] Fix password error message issue
-- [x] Create installer with wizard to set up directory structures, user files, program files, etc.
+- [ ] Clean up all the (very) messy code & Add internal documentation
+- [ ] ================================ STRETCH GOALS ================================
 - [ ] Create more secure method of encryption than a +7 cypher.
 - [ ] Add the ability to click+drag on the window panels and move them around (this is a problem with the way the windows are designed and not VB or Windows.) This will need to be done for every form.
-- [ ] Create search function which returns a list of indexes which correlate to search results in the input list.
-- [ ] Add search functionality to *frmDataView.vb* to allow for quicker location of records in both the list and calendar view modes.
 - [ ] Add "Management" form (Admin only) which will allow for exporting data files with information to email.
 - [ ] Send Invoice from hire form once complete? Very, Very long term stretchy goal
+- [ ] Also, fix the quantity

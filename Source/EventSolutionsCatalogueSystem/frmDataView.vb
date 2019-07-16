@@ -65,7 +65,7 @@ Public Class frmDataView
 
         'Initialize array to blank data
         For g = 0 To calendarStoreSize() * 2
-            calendarEvents(g).calEvent = ""
+            calendarEvents(g).calEvent = "{"
             calendarEvents(g).otherInformation = ""
         Next
 
@@ -219,7 +219,55 @@ Public Class frmDataView
         lstListView.Items.Clear()
         For i = 0 To calendarEvents.Length - 1
 
-            'lstListView.Items.Add(calendarEvents(i).dateTime)
+            If calendarEvents(i).otherInformation <> "" Then
+                listWriter(0) = calendarEvents(i).dateTime.Date
+                listWriter(1) = calendarEvents(i).calEvent
+                listBackend(listIndex) = calendarEvents(i).otherInformation
+                listIndex = listIndex + 1
+                newItem = New ListViewItem(listWriter)
+                lstListView.Items.Add(newItem)
+
+            End If
+        Next
+    End Sub
+
+    Private Sub imgAlphabeticalSort_Click(sender As Object, e As EventArgs) Handles imgAlphabeticalSort.Click
+        Dim smallestPos As Integer = -1
+        Dim temp As Date
+        Dim tempEvent As String
+        Dim tempInfo As String
+
+        Dim listWriter(2) As String
+        Dim newItem As ListViewItem
+        Dim listIndex As Integer = 0
+
+
+        For i As Integer = 0 To calendarEvents.Length - 2
+            smallestPos = i
+            For f As Integer = 0 To calendarEvents.Length - 1
+                'MsgBox(Asc(calendarEvents(f).calEvent))
+                If Asc(calendarEvents(f).calEvent.ToUpper()) < Asc(calendarEvents(smallestPos).calEvent.ToUpper()) Then
+                    smallestPos = f
+                End If
+            Next
+
+            If i <> smallestPos Then
+                temp = calendarEvents(smallestPos).dateTime
+                calendarEvents(smallestPos).dateTime = calendarEvents(i).dateTime
+                calendarEvents(i).dateTime = temp
+
+                tempEvent = calendarEvents(smallestPos).calEvent
+                calendarEvents(smallestPos).calEvent = calendarEvents(i).calEvent
+                calendarEvents(i).calEvent = tempEvent
+
+                tempInfo = calendarEvents(smallestPos).otherInformation
+                calendarEvents(smallestPos).otherInformation = calendarEvents(i).otherInformation
+                calendarEvents(i).otherInformation = tempInfo
+            End If
+        Next
+
+        lstListView.Items.Clear()
+        For i = 0 To calendarEvents.Length - 1
 
             If calendarEvents(i).otherInformation <> "" Then
                 listWriter(0) = calendarEvents(i).dateTime.Date
@@ -231,12 +279,6 @@ Public Class frmDataView
 
             End If
         Next
-
-
-
-    End Sub
-
-    Private Sub imgAlphabeticalSort_Click(sender As Object, e As EventArgs) Handles imgAlphabeticalSort.Click
 
     End Sub
 
