@@ -9,30 +9,30 @@
 '    information (such as privelige) '
 ''''''''''''''''''''''''''''''''''''''
 
-Imports System.IO 'Import the Input/Output stuff. Specifically, we're using StreamReader/StreamWriter.
+Imports System.IO                                                               'Import the Input/Output stuff. Specifically, we're using StreamReader/StreamWriter.
 
 Public Class frmLogin
-    'Declare some publicly accessible variables in case we need to check the user on a different form.
+    '                                                                           'Declare some publicly accessible variables in case we need to check the user on a different form.
     Public loggedInUser As String
     Public loggedInPrivilege As String
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        'Start login precedure on button click.
+        '                                                                       'Start login precedure on button click.
         evLogin()
     End Sub
 
     Private Sub btnQuit_Click(sender As Object, e As EventArgs) Handles btnQuit.Click
-        'Quit when the login form is cancelled.
+        '                                                                       'Quit when the login form is cancelled.
         Application.Exit()
     End Sub
 
     Sub evLogin()
-        'Declare some local variables to store user information
+        '                                                                       'Declare some local variables to store user information
         Dim usernameLine As String
         Dim passwordLine As String
         Dim privilegeLine As String
 
-        'Declare a local variable to keep track of login issues if they happen.
+        '                                                                       'Declare a local variable to keep track of login issues if they happen.
         Dim errorLevel As Integer = 0
 
         Using fileRead As New StreamReader(evRootPath & userStoreLocation, True) 'Recursively loop until a username matches what's been entered

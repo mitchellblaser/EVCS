@@ -24,7 +24,6 @@ C:\VBTemp\EventSolutionsCatalogueSystem.exe.config
 C:\VBTemp\EventSolutionsCatalogueSystem.exe
 C:\VBTemp\EventSolutionsCatalogueSystem.pdb
 C:\VBTemp\EventSolutionsCatalogueSystem.xml
-C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Debug\EventSolutionsCatalogueSystem.vbprojResolveAssemblyReference.cache
 C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Debug\EventSolutionsCatalogueSystem.frmAddUserBox.resources
 C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Debug\EventSolutionsCatalogueSystem.frmDataEntry.resources
 C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Debug\EventSolutionsCatalogueSystem.frmDataView.resources
