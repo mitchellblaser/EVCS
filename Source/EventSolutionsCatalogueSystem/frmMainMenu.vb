@@ -13,12 +13,12 @@
 '    activity.                       '
 ''''''''''''''''''''''''''''''''''''''
 
-Public Class frmMainMenu 'Make the form's class
-    Public selectedTask As String 'Declare the variable and make it public. We don't have to give it an initial value because it can't possibly be used until a button is clicked.
+Public Class frmMainMenu                        'Make the form's class
+    Public selectedTask As String               'Declare the variable and make it public. We don't have to give it an initial value because it can't possibly be used until a button is clicked.
     Private Sub btnAddClient_Click(sender As Object, e As EventArgs) Handles btnAddClient.Click
-        selectedTask = "AddClient" 'Set selectedTask to the relevant value
-        frmDataEntry.Show() 'Show the relevant form
-        Me.Hide() 'Hide the main menu form, but don't close it. We need selectedTask still so it has to stay open in the background.
+        selectedTask = "AddClient"              'Set selectedTask to the relevant value
+        frmDataEntry.Show()                     'Show the relevant form
+        Me.Hide()                               'Hide the main menu form, but don't close it. We need selectedTask still so it has to stay open in the background.
     End Sub
 
     Private Sub btnAddEquipment_Click(sender As Object, e As EventArgs) Handles btnAddEquipment.Click
