@@ -1,8 +1,6 @@
 EventSolutions Catalogue System
 
-#### A (*less*) simple inventory system written in *VB.NET :(*
-
-"it kind of works"
+#### A (*less*) simple inventory system written in *VB.NET*
 
 > **<u>Installation</u>**
 >
