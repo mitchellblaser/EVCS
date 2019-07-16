@@ -15,16 +15,14 @@ EventSolutions Catalogue System
 #### <u>To Do:</u> *(Cleared as of 16/7/19)*
 
 - [ ] Also, fix the quantity
-- [ ] add error check for dialog path selection cancel
+- [x] add error check for dialog path selection cancel
 - [ ] Add 'Sort by Date (newest)' sorting algorithm
-- [ ] Add 'Sort by Date (oldest)' sorting algorithm
 - [ ] Add 'Sort by Alphabetical (A-Z)' sorting algorithm
-- [ ] Add 'Sort by Alphabetical (Z-A)' sorting algorithm
 - [ ] Migrate sorting algorithms to *frmDataView.vb*'s List View
 - [ ] Clean up all the (very) messy code
-- [ ] Fix the ding
-- [ ] Fix password error message issue
-- [ ] Create installer with wizard to set up directory structures, user files, program files, etc.
+- [x] Fix the ding
+- [x] Fix password error message issue
+- [x] Create installer with wizard to set up directory structures, user files, program files, etc.
 - [ ] Create more secure method of encryption than a +7 cypher.
 - [ ] Add the ability to click+drag on the window panels and move them around (this is a problem with the way the windows are designed and not VB or Windows.) This will need to be done for every form.
 - [ ] Create search function which returns a list of indexes which correlate to search results in the input list.
