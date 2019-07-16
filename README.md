@@ -6,11 +6,7 @@ EventSolutions Catalogue System
 
 > **<u>Installation</u>**
 >
-> There isn't a packaged executable yet, as the solution is still in (very) early development.
->
-> If you want to see what is currently working, you'll need Visual Studio 2015 and a file in `*%appdata%\EventSolutions\userstore\*` called "userstore.txt". An example file has been included in `\source\example_userstore.txt`. Don't try to read the file - It uses my **super advanced** encryption method (which is definitely **very good and secure**)
->
-> Once you have the setup completed, you should be able to run the solution and log in with the default credentials, `user` and `password`.
+> We now have a packaged installer! Run /Binaries/EVCS-Installer-X.X.X.exe as Administrator and press install!
 
 #### <u>To Do:</u> *(Cleared as of 16/7/19)*
 
