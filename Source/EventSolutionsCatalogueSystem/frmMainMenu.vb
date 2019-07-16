@@ -49,6 +49,6 @@ Public Class frmMainMenu                        'Make the form's class
 
     Private Sub btnEditUsers_Click(sender As Object, e As EventArgs) Handles btnEditUsers.Click
         frmEditUsers.Show()                     'Show the relevant form. 
-        Me.Hide()                               'Hide the main menu form, but don't close it. We need selectedTask still so it has to stay open in the background.
+        'Me.Hide()                               'Hide the main menu form, but don't close it. We need selectedTask still so it has to stay open in the background.
     End Sub
 End Class

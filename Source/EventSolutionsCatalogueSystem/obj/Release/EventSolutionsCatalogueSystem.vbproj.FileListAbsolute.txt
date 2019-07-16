@@ -2,6 +2,7 @@ C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\bin\Release\Eve
 C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\bin\Release\EventSolutionsCatalogueSystem.exe
 C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\bin\Release\EventSolutionsCatalogueSystem.pdb
 C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\bin\Release\EventSolutionsCatalogueSystem.xml
+C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Release\EventSolutionsCatalogueSystem.vbprojResolveAssemblyReference.cache
 C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Release\EventSolutionsCatalogueSystem.frmAddUserBox.resources
 C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Release\EventSolutionsCatalogueSystem.frmDataEntry.resources
 C:\Users\Mitch\Desktop\EVCS\Source\EventSolutionsCatalogueSystem\obj\Release\EventSolutionsCatalogueSystem.frmDataView.resources
