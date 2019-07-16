@@ -148,7 +148,7 @@ Public Class frmDataView
         If lstEventsForDay.SelectedIndex = -1 Then
             MsgBox("Select an item first.")
         Else
-            MsgBox(calBackend(lstEventsForDay.SelectedIndex))
+            MsgBox(lstEventsForDay.Items(lstEventsForDay.SelectedIndex) & vbNewLine & calBackend(lstEventsForDay.SelectedIndex))
         End If
 
     End Sub
@@ -167,7 +167,31 @@ Public Class frmDataView
         If lstListView.SelectedIndices.Count = 0 Then
             MsgBox("Select an item first.")
         Else
-            MsgBox(listBackend(lstListView.SelectedIndices(0)))
+            MsgBox(vbNewLine & lstListView.SelectedItems(0).SubItems(1).Text & vbNewLine & listBackend(lstListView.SelectedIndices(0)))
+        End If
+    End Sub
+
+    Private Sub imgDateSort_Click(sender As Object, e As EventArgs) Handles imgDateSort.Click
+
+    End Sub
+
+    Private Sub imgAlphabeticalSort_Click(sender As Object, e As EventArgs) Handles imgAlphabeticalSort.Click
+
+    End Sub
+
+    Private Sub imgSearch_Click(sender As Object, e As EventArgs) Handles imgSearch.Click
+        Dim i As Integer = 0
+        Dim searchterm As String = ""
+
+        searchterm = InputBox("Enter Search Term: ", "Search Events", "")
+
+        If pnlViewCal.Visible = True Then
+            While i < lstEventsForDay.Items.Count
+                If lstEventsForDay.Items(i).ToString.ToUpper.Contains(searchterm.ToUpper) Then
+                    MsgBox(lstEventsForDay.Items(i).ToString & vbNewLine & listBackend(i))
+                End If
+                i = i + 1
+            End While
         End If
 
     End Sub

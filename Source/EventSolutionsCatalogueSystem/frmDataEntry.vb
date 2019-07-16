@@ -195,67 +195,95 @@ Public Class frmDataEntry
         Dim priceLine As Integer
 
         If frmMainMenu.selectedTask = "AddEquipment" Then
+            dlgOpenRecord.Reset()
             dlgOpenRecord.InitialDirectory = evRootPath & equipmentStoreLocation
             dlgOpenRecord.ShowDialog()
-            openDataPath = dlgOpenRecord.FileName
 
-            Using fileread As New StreamReader(openDataPath)
-                txtName.Focus() ' We have to focus a text box (or any other element) to change the value of a combo box, so we do this first.
+            If dlgOpenRecord.CheckFileExists = False Then
+                MsgBox("Please select a file.")
+            Else
+                openDataPath = dlgOpenRecord.FileName
+                Try
+                    Using fileread As New StreamReader(openDataPath)
+                        txtName.Focus() ' We have to focus a text box (or any other element) to change the value of a combo box, so we do this first.
 
-                txtName.Text = fileread.ReadLine()
-                txtManufacturer.Text = fileread.ReadLine()
-                numQuantity.Value = fileread.ReadLine()
-                numPricePerDay.Value = fileread.ReadLine()
+                        txtName.Text = fileread.ReadLine()
+                        txtManufacturer.Text = fileread.ReadLine()
+                        numQuantity.Value = fileread.ReadLine()
+                        numPricePerDay.Value = fileread.ReadLine()
 
-            End Using
+                    End Using
+                Catch ex As Exception
+                    MsgBox("Please select a file.")
+                End Try
+
+            End If
 
         ElseIf frmMainMenu.selectedTask = "AddClient" Then
+            dlgOpenRecord.Reset()
             dlgOpenRecord.InitialDirectory = evRootPath & clientStoreLocation
             dlgOpenRecord.ShowDialog()
-            openDataPath = dlgOpenRecord.FileName
 
-            Using readfile As New StreamReader(openDataPath)
-                txtName.Focus() 'Reset the user's view back to the first box for easy data entry
+            If dlgOpenRecord.CheckFileExists = False Then
+                MsgBox("Please select a file.")
+            Else
+                openDataPath = dlgOpenRecord.FileName
+                Try
+                    Using readfile As New StreamReader(openDataPath)
+                        txtName.Focus() 'Reset the user's view back to the first box for easy data entry
 
-                txtFirstName.Text = readfile.ReadLine()
-                txtNameLast.Text = readfile.ReadLine()
-                txtPhone.Text = readfile.ReadLine()
-                txtEmail.Text = readfile.ReadLine()
-                txtAddress.Text = readfile.ReadLine()
+                        txtFirstName.Text = readfile.ReadLine()
+                        txtNameLast.Text = readfile.ReadLine()
+                        txtPhone.Text = readfile.ReadLine()
+                        txtEmail.Text = readfile.ReadLine()
+                        txtAddress.Text = readfile.ReadLine()
 
-            End Using
+                    End Using
+                Catch ex As Exception
+                    MsgBox("Please select a file.")
+                End Try
+
+            End If
 
         ElseIf frmMainMenu.selectedTask = "AddHire" Then
+            dlgOpenRecord.Reset()
             dlgOpenRecord.InitialDirectory = evRootPath & hireStoreLocation
             dlgOpenRecord.ShowDialog()
 
-            openDataPath = dlgOpenRecord.FileName
+            If dlgOpenRecord.CheckFileExists = False Then
+                MsgBox("Please select a file.")
+            Else
+                openDataPath = dlgOpenRecord.FileName
+                Try
+                    Using readfile As New StreamReader(openDataPath)
+                        cmbClient.Focus()
+                        cmbClient.Text = readfile.ReadLine()
+                        dtpDateOut.Value = readfile.ReadLine()
+                        dtpDateIn.Value = readfile.ReadLine()
 
-            Using readfile As New StreamReader(openDataPath)
-                cmbClient.Focus()
-                cmbClient.Text = readfile.ReadLine()
-                dtpDateOut.Value = readfile.ReadLine()
-                dtpDateIn.Value = readfile.ReadLine()
+                        lstEquipment.Items.Clear()
+                        lstPrice.Items.Clear()
+                        lstQuantity.Items.Clear()
 
-                lstEquipment.Items.Clear()
-                lstPrice.Items.Clear()
-                lstQuantity.Items.Clear()
-
-                While True
-                    equipmentLine = readfile.ReadLine()
-                    If equipmentLine Is Nothing Then
-                        Exit While
-                    Else
-                        lstEquipment.Items.Add(equipmentLine)
-                        quantityLine = readfile.ReadLine()
-                        lstQuantity.Items.Add(quantityLine)
-                        priceLine = readfile.ReadLine()
-                        lstPrice.Items.Add(priceLine)
-                        totalPrice = totalPrice + priceLine * quantityLine
-                    End If
-                End While
-            End Using
-            calculateHireCost()
+                        While True
+                            equipmentLine = readfile.ReadLine()
+                            If equipmentLine Is Nothing Then
+                                Exit While
+                            Else
+                                lstEquipment.Items.Add(equipmentLine)
+                                quantityLine = readfile.ReadLine()
+                                lstQuantity.Items.Add(quantityLine)
+                                priceLine = readfile.ReadLine()
+                                lstPrice.Items.Add(priceLine)
+                                totalPrice = totalPrice + priceLine * quantityLine
+                            End If
+                        End While
+                    End Using
+                    calculateHireCost()
+                Catch ex As Exception
+                    MsgBox("Please select a file.")
+                End Try
+            End If
         Else
             MsgBox("Oops! An error has occured. Please exit and try again.")
         End If
