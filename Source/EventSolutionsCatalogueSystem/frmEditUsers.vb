@@ -26,7 +26,7 @@ Public Class frmEditUsers
         newItem = New ListViewItem(listWriter)
         lstUsers.Items.Add(newItem)
 
-        Using filewrite As New StreamWriter(frmLogin.userStorePath, True)
+        Using filewrite As New StreamWriter(evRootPath & userStoreLocation, True)
             filewrite.WriteLine(Encrypt(newUsername))
             filewrite.WriteLine(Encrypt(newPassword))
             filewrite.WriteLine(Encrypt(newLevel))
@@ -36,6 +36,7 @@ Public Class frmEditUsers
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
+        frmMainMenu.Show()
     End Sub
 
     Private Sub frmEditUsers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -57,7 +58,7 @@ Public Class frmEditUsers
 
         lstUsers.Items.Clear()
 
-        Using fileread As New StreamReader(frmLogin.userStorePath, True)
+        Using fileread As New StreamReader(evRootPath & userStoreLocation, True)
             While True
                 eofcheck = fileread.ReadLine()
                 If eofcheck Is Nothing Then
@@ -85,7 +86,7 @@ Public Class frmEditUsers
 
         targetUsername = lstUsers.Items(deleteIndex).Text
 
-        Using fileread As New StreamReader(frmLogin.userStorePath, True)
+        Using fileread As New StreamReader(evRootPath & userStoreLocation, True)
 
             While True
                 readUsername = fileread.ReadLine()
@@ -106,9 +107,9 @@ Public Class frmEditUsers
             End While
         End Using
 
-        My.Computer.FileSystem.DeleteFile(frmLogin.userStorePath)
+        My.Computer.FileSystem.DeleteFile(evRootPath & userStoreLocation)
 
-        Using filewrite As New StreamWriter(frmLogin.userStorePath, True)
+        Using filewrite As New StreamWriter(evRootPath & userStoreLocation, True)
             For i As Integer = 0 To writeList.Count - 1
                 filewrite.WriteLine(Encrypt(writeList.Item(i)))
             Next

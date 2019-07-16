@@ -31,6 +31,7 @@ Partial Class frmMainMenu
         Me.btnViewData = New System.Windows.Forms.Button()
         Me.picClose = New System.Windows.Forms.PictureBox()
         Me.btnEditUsers = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picClose, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -136,12 +137,23 @@ Partial Class frmMainMenu
         Me.btnEditUsers.Text = "Add/Remove Users"
         Me.btnEditUsers.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(218, 178)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(37, 13)
+        Me.Label1.TabIndex = 8
+        Me.Label1.Text = "v1.0.0"
+        '
         'frmMainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(258, 236)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnEditUsers)
         Me.Controls.Add(Me.picClose)
         Me.Controls.Add(Me.btnViewData)
@@ -158,6 +170,7 @@ Partial Class frmMainMenu
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picClose, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -170,4 +183,5 @@ Partial Class frmMainMenu
     Friend WithEvents btnViewData As Button
     Friend WithEvents picClose As PictureBox
     Friend WithEvents btnEditUsers As Button
+    Friend WithEvents Label1 As Label
 End Class

@@ -38,7 +38,7 @@ Public Class frmAddUserBox
 
         valid = True
 
-        Using fileread As New StreamReader(frmLogin.userStorePath, True)
+        Using fileread As New StreamReader(evRootPath & userStoreLocation, True)
             While True
 
                 readUsername = fileread.ReadLine()
